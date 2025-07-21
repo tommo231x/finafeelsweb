@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
     window.finaFeelsLoaded = true;
-    
+
     // Console welcome message
     console.log('%c Welcome to FinaFeels! ', 'background: #4B206D; color: white; padding: 10px; border-radius: 5px; font-size: 16px;');
     console.log('%c Fashion. AI. Creativity. Solutions. ', 'color: #4B206D; font-size: 14px;');
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (isHomepage) {
         // Declare carousel interval variable first
         let carouselInterval = null;
-        
+
         // Preload carousel images with loading states
         const carouselImages = [
             'assets/images/fina1.jpg',
@@ -26,10 +26,10 @@ document.addEventListener('DOMContentLoaded', function() {
             'assets/images/fina4.jpg',
             'assets/images/fina5.jpg'
         ];
-        
+
         let loadedImages = 0;
         const totalImages = carouselImages.length;
-        
+
         carouselImages.forEach((src, index) => {
             const img = new Image();
             img.onload = function() {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     slide.classList.add('loaded');
                     slide.style.backgroundImage = `url('${src}')`;
                 }
-                
+
                 // Start carousel only when all images are loaded
                 if (loadedImages === totalImages && !carouselInterval) {
                     if (isMobile()) {
@@ -82,15 +82,15 @@ document.addEventListener('DOMContentLoaded', function() {
             function goToSlide(slideIndex) {
                 const currentSlideElement = slides[currentSlide];
                 const nextSlideElement = slides[slideIndex];
-                
+
                 // Crossfade transition
                 currentSlideElement.style.opacity = '0';
                 currentSlideElement.style.zIndex = '1';
                 nextSlideElement.style.opacity = '1';
                 nextSlideElement.style.zIndex = '2';
-                
+
                 currentSlide = slideIndex;
-                
+
                 // Update dots
                 dots.forEach((dot, index) => {
                     dot.classList.toggle('active', index === currentSlide);
@@ -132,24 +132,24 @@ document.addEventListener('DOMContentLoaded', function() {
             if (isMobile()) {
                 // On mobile, start carousel immediately and let it run
                 startCarousel();
-                
+
                 // Add touch handlers for better mobile experience
                 let touchStartX = 0;
                 let touchEndX = 0;
-                
+
                 finaCarousel.addEventListener('touchstart', function(e) {
                     touchStartX = e.changedTouches[0].screenX;
                 });
-                
+
                 finaCarousel.addEventListener('touchend', function(e) {
                     touchEndX = e.changedTouches[0].screenX;
                     handleSwipe();
                 });
-                
+
                 function handleSwipe() {
                     const swipeThreshold = 50;
                     const diff = touchStartX - touchEndX;
-                    
+
                     if (Math.abs(diff) > swipeThreshold) {
                         if (diff > 0) {
                             // Swipe left - next slide
@@ -211,11 +211,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     video.classList.add('studio-video-element');
                     studioSection.appendChild(video);
                     videoElements.push(video);
-                    
+
                     // Preload the video
                     video.load();
                 });
-                
+
                 // Remove the original video element
                 if (studioVideo) {
                     studioVideo.remove();
@@ -226,13 +226,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 const currentVideo = videoElements[currentVideoIndex];
                 currentVideoIndex = (currentVideoIndex + 1) % studioVideos.length;
                 const nextVideo = videoElements[currentVideoIndex];
-                
+
                 // Crossfade transition
                 currentVideo.style.opacity = '0';
                 currentVideo.style.zIndex = '1';
                 nextVideo.style.opacity = '0.8';
                 nextVideo.style.zIndex = '2';
-                
+
                 // Sync video playback
                 if (isVideoPlaying) {
                     nextVideo.play().catch(() => {});
@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Initialize the video system
             initializeVideos();
-            
+
             if (isMobile()) {
                 // On mobile, start videos immediately
                 isVideoPlaying = true;
@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     video.play().catch(() => {});
                 });
                 startVideoRotation();
-                
+
                 // Add touch handler for mobile interaction
                 studioSection.addEventListener('touchstart', function() {
                     switchStudioVideo();
@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                     startVideoRotation();
                 });
-                
+
                 studioSection.addEventListener('mouseleave', function() {
                     isVideoPlaying = false;
                     videoElements.forEach(video => {
