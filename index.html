@@ -1,16 +1,99 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta Tags -->
+  <title>FinaFeels – Enter the World of AI Imagination</title>
+  <meta name="title" content="FinaFeels – Enter the World of AI Imagination" />
+  <meta name="description" content="Explore Fina's world of AI art, social collabs, and creative studio projects." />
+  <meta name="keywords" content="FinaFeels, AI influencer, AI model, digital creator, AI art, virtual studio, collaborations, Instagram AI" />
+  <meta name="author" content="FinaFeels" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.finafeels.com/" />
+  <meta property="og:title" content="FinaFeels – Enter the World of AI Imagination" />
+  <meta property="og:description" content="Explore Fina's world of AI art, social collabs, and creative studio projects." />
+  <meta property="og:image" content="https://www.finafeels.com/assets/images/fina1.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.finafeels.com/" />
+  <meta property="twitter:title" content="FinaFeels – Enter the World of AI Imagination" />
+  <meta property="twitter:description" content="Explore Fina's world of AI art, social collabs, and creative studio projects." />
+  <meta property="twitter:image" content="https://www.finafeels.com/assets/images/fina1.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
+  <!-- Fonts and CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  Hello world
-  <script src="script.js"></script>
-</body>
+  <div class="homepage-split">
+    <!-- Fina & Socials Side -->
+    <div class="split-section fina-section" id="fina-carousel">
+      <div class="carousel-container">
+        <div class="carousel-slide active"></div>
+        <div class="carousel-slide"></div>
+        <div class="carousel-slide"></div>
+        <div class="carousel-slide"></div>
+        <div class="carousel-slide"></div>
+      </div>
+      <div class="carousel-dots">
+        <span class="dot active" data-slide="0"></span>
+        <span class="dot" data-slide="1"></span>
+        <span class="dot" data-slide="2"></span>
+        <span class="dot" data-slide="3"></span>
+        <span class="dot" data-slide="4"></span>
+      </div>
+    </div>
 
+    <!-- Studio Side -->
+    <div class="split-section studio-section">
+      <video class="studio-video" muted loop>
+        <source src="assets/videos/studio1.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="split-background"></div>
+    </div>
+  </div>
+
+  <div class="floating-content floating-fina">
+    <h2>Fina's World</h2>
+    <a href="socials.html" class="button">Enter</a>
+  </div>
+
+  <div class="floating-content floating-studio">
+    <h2>The Studio</h2>
+    <a href="studio.html" class="button">Enter</a>
+  </div>
+
+  <!-- Your JS -->
+  <script src="script.js"></script>
+
+  <!-- Firebase Analytics -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBNAiBbjBl7SpqwL0NiJmx3BVuRrd1FVBA",
+      authDomain: "finafeels-39852.firebaseapp.com",
+      projectId: "finafeels-39852",
+      storageBucket: "finafeels-39852.firebasestorage.app",
+      messagingSenderId: "962083690885",
+      appId: "1:962083690885:web:115469c62f982fa24fccec",
+      measurementId: "G-C60L4MRLYR"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</body>
 </html>

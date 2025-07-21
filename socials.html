@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fina's Socials - FinaFeels</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="FinaFeels - Explore the AI World of Fina" />
+    <meta property="og:description" content="Step into the digital studio and social space of FinaFeels." />
+    <meta property="og:image" content="https://www.finafeels.com/assets/images/fina5.jpg" />
+    <meta property="og:url" content="https://www.finafeels.com" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Centralized Navigation -->
+    <div id="nav-placeholder"></div>
+    <script>
+      fetch("nav.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("nav-placeholder").innerHTML = data;
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="hero socials-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Fina's Social World</h1>
+                <p>Follow the AI fashion muse across platforms</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Platforms -->
+    <section class="social-platforms">
+        <div class="container">
+            <h2>Connect with Fina</h2>
+            <div class="social-grid">
+                <div class="social-card">
+                    <div class="social-icon">📸</div>
+                    <h3>Instagram</h3>
+                    <p>Daily fashion inspiration and behind-the-scenes</p>
+                    <a href="#" class="btn btn-outline">Follow on Instagram</a>
+                </div>
+                <div class="social-card">
+                    <div class="social-icon">🎵</div>
+                    <h3>TikTok</h3>
+                    <p>Quick fashion tips and AI creativity</p>
+                    <a href="#" class="btn btn-outline">Watch on TikTok</a>
+                </div>
+                <div class="social-card">
+                    <div class="social-icon">📺</div>
+                    <h3>YouTube</h3>
+                    <p>In-depth fashion content and tutorials</p>
+                    <a href="#" class="btn btn-outline">Subscribe</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaborations Section -->
+    <section class="collaborations-preview">
+        <div class="container">
+            <h2>Collaborations</h2>
+            <p>See Fina's latest partnerships and creative projects</p>
+            <div class="collab-preview-grid">
+                <div class="collab-preview-card">
+                    <div class="collab-image">
+                        <img src="assets/images/blog-thumbnail-1.jpg" alt="Collaboration Preview" />
+                    </div>
+                    <h3>Latest Collaboration</h3>
+                    <p>Exploring new creative partnerships...</p>
+                </div>
+                <div class="collab-preview-card">
+                    <div class="collab-image">
+                        <img src="assets/images/blog-thumbnail-1.jpg" alt="Collaboration Preview" />
+                    </div>
+                    <h3>Featured Project</h3>
+                    <p>AI meets fashion in this stunning series...</p>
+                </div>
+            </div>
+            <div class="collab-cta">
+                <a href="collabs.html" class="btn btn-primary">View All Collaborations</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2>Featured Content</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Behind the Scenes</h3>
+                    <p>Get an inside look at Fina's creative process</p>
+                    <a href="#" class="btn btn-outline">Read More</a>
+                </div>
+                <div class="feature-card">
+                    <h3>Style Guide</h3>
+                    <p>Fina's take on current fashion trends</p>
+                    <a href="#" class="btn btn-outline">Explore</a>
+                </div>
+                <div class="feature-card">
+                    <h3>Creator Spotlights</h3>
+                    <p>Meet the talented people Fina loves to work with</p>
+                    <a href="#" class="btn btn-outline">Discover</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

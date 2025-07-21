@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About FinaFeels</title>
+    
+    <meta name="description" content="Learn about FinaFeels - where fashion meets AI innovation. Discover our mission and explore the world of AI-powered fashion creativity." />
+    <meta name="keywords" content="FinaFeels, AI influencer, AI model, digital creator, AI art, virtual studio, about, fashion AI" />
+    <meta name="author" content="FinaFeels" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="About FinaFeels – Fashion Meets AI Innovation" />
+    <meta property="og:description" content="Learn about FinaFeels and our mission to bridge AI technology with fashion creativity." />
+    <meta property="og:image" content="https://www.finafeels.com/assets/images/fina2.jpg" />
+    <meta property="og:url" content="https://www.finafeels.com/about.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About FinaFeels – Fashion Meets AI Innovation" />
+    <meta name="twitter:description" content="Discover how FinaFeels bridges AI technology with fashion creativity." />
+    <meta name="twitter:image" content="https://www.finafeels.com/assets/images/fina2.jpg" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Centralized Navigation -->
+    <div id="nav-placeholder"></div>
+    <script>
+      // Load navigation only once
+      if (!window.navLoaded) {
+        window.navLoaded = true;
+        fetch("nav.html")
+          .then(response => {
+            if (!response.ok) throw new Error('Navigation fetch failed');
+            return response.text();
+          })
+          .then(data => {
+            const navPlaceholder = document.getElementById("nav-placeholder");
+            if (navPlaceholder && !navPlaceholder.innerHTML.trim()) {
+              navPlaceholder.innerHTML = data;
+            }
+          })
+          .catch(error => {
+            console.error('Navigation loading failed:', error);
+            window.navLoaded = false;
+          });
+      }
+    </script>
+    
+    <!-- Hero Section -->
+    <section class="hero about-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">About FinaFeels</h1>
+                <p class="hero-subtitle">Where Fashion Meets AI Innovation</p>
+                <div class="hero-buttons">
+                    <a href="index.html" class="btn btn-outline">← Back to Home</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Hero image removed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Our Mission</h2>
+                    <p>Welcome to FinaFeels, where we bridge the gap between cutting-edge artificial intelligence and the dynamic world of fashion. Our AI fashion muse Fina represents the future of creative expression, combining technology with style to inspire new possibilities.</p>
+                    <p>We're dedicated to exploring how AI can enhance creativity, streamline design processes, and open new avenues for artistic expression in the fashion industry. Through Fina's journey, we showcase the potential of AI-human collaboration in creating meaningful, beautiful, and innovative fashion content.</p>
+                    <a href="studio.html" class="btn btn-primary">Explore Our Studio</a>
+                </div>
+                <div class="about-image">
+                    <img src="assets/images/fina1.jpg" alt="Fina the AI Fashion Muse">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2>What We Do</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>AI Fashion Design</h3>
+                    <p>Leveraging artificial intelligence to create innovative fashion concepts and designs that push creative boundaries.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Creative Solutions</h3>
+                    <p>Providing cutting-edge solutions for brands looking to integrate AI into their creative workflows and design processes.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Digital Innovation</h3>
+                    <p>Exploring new frontiers in digital fashion, virtual styling, and AI-powered creative content generation.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Community Building</h3>
+                    <p>Building a community around the intersection of technology and fashion, fostering collaboration and innovation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
