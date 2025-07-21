@@ -20,10 +20,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Preload carousel images with loading states
         const carouselImages = [
-            'attached_assets/fina1_1752576060705.jpg',
-            'attached_assets/fina2_1752576060705.png',
-            'attached_assets/fina3_1752576060705.png',
-            'attached_assets/fina4_1752576060706.png',
+            'assets/images/fina1.jpg',
+            'assets/images/fina2.jpg',
+            'assets/images/fina3.jpg',
+            'assets/images/fina4.jpg',
             'assets/images/fina5.jpg'
         ];
         

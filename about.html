@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,25 +34,11 @@
     <!-- Centralized Navigation -->
     <div id="nav-placeholder"></div>
     <script>
-      // Load navigation only once
-      if (!window.navLoaded) {
-        window.navLoaded = true;
-        fetch("nav.html")
-          .then(response => {
-            if (!response.ok) throw new Error('Navigation fetch failed');
-            return response.text();
-          })
-          .then(data => {
-            const navPlaceholder = document.getElementById("nav-placeholder");
-            if (navPlaceholder && !navPlaceholder.innerHTML.trim()) {
-              navPlaceholder.innerHTML = data;
-            }
-          })
-          .catch(error => {
-            console.error('Navigation loading failed:', error);
-            window.navLoaded = false;
-          });
-      }
+      fetch("nav.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("nav-placeholder").innerHTML = data;
+        });
     </script>
     
     <!-- Hero Section -->
