@@ -81,14 +81,13 @@
     <button id="sendLinkBtn">Send Sign-In Link</button>
   </div>
 
-  <!-- Your JS -->
-  <script src="script.js"></script>
+  <!-- Firebase SDK (v8 compat for auth) -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
 
-  <!-- Firebase Analytics -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
-
+  <!-- Firebase Config -->
+  <script>
     const firebaseConfig = {
       apiKey: "AIzaSyBNAiBbjBl7SpqwL0NiJmx3BVuRrd1FVBA",
       authDomain: "finafeels-39852.firebaseapp.com",
@@ -99,8 +98,11 @@
       measurementId: "G-C60L4MRLYR"
     };
 
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
   </script>
+
+  <!-- Your JS -->
+  <script src="script.js"></script>
 </body>
 </html>

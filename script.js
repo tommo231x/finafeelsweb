@@ -446,8 +446,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // CSS for animations
-const style = document.createElement('style');
-style.textContent = `
+const animationStyle = document.createElement('style');
+animationStyle.textContent = `
     @keyframes ripple {
         to {
             transform: scale(4);
@@ -466,4 +466,63 @@ style.textContent = `
         animation-name: fadeInUp;
     }
 `;
-document.head.appendChild(style);
+document.head.appendChild(animationStyle);
+
+// === Firebase Auth: Email Link Sign-In ===
+// Wait for Firebase to be available
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if Firebase is loaded
+    if (typeof firebase !== 'undefined') {
+        const auth = firebase.auth();
+
+        const actionCodeSettings = {
+            url: 'https://www.finafeels.com',
+            handleCodeInApp: true
+        };
+
+        // Send email sign-in link
+        const sendLinkBtn = document.getElementById("sendLinkBtn");
+        if (sendLinkBtn) {
+            sendLinkBtn.addEventListener("click", () => {
+                const emailInput = document.getElementById("emailInput");
+                if (emailInput) {
+                    const email = emailInput.value;
+                    if (email) {
+                        auth.sendSignInLinkToEmail(email, actionCodeSettings)
+                            .then(() => {
+                                window.localStorage.setItem("emailForSignIn", email);
+                                alert("Link sent! Check your inbox.");
+                            })
+                            .catch(error => {
+                                console.error("Error sending link:", error.message);
+                                alert("Error: " + error.message);
+                            });
+                    } else {
+                        alert("Please enter an email address.");
+                    }
+                }
+            });
+        }
+
+        // Handle link when user returns
+        if (auth.isSignInWithEmailLink(window.location.href)) {
+            let email = localStorage.getItem("emailForSignIn");
+            if (!email) {
+                email = window.prompt("Please confirm your email:");
+            }
+            if (email) {
+                auth.signInWithEmailLink(email, window.location.href)
+                    .then(result => {
+                        localStorage.removeItem("emailForSignIn");
+                        alert("Signed in as: " + result.user.email);
+                    })
+                    .catch(error => {
+                        console.error("Sign-in failed:", error.message);
+                        alert("Sign-in failed: " + error.message);
+                    });
+            }
+        }
+    } else {
+        console.error("Firebase not loaded");
+    }
+});
