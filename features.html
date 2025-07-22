@@ -1,235 +1,189 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FinaFeels – Features</title>
-  
+  <title>Featured Collaborations - FinaFeels</title>
+
   <!-- Meta tags for SEO -->
-  <meta name="description" content="Explore behind-the-scenes moments, style evolution, and the digital fashion future of FinaFeels and her collaborators." />
-  <meta name="keywords" content="FinaFeels, AI fashion, digital fashion, style guide, fashion trends, creator spotlight" />
-  
+  <meta name="description" content="Explore Fina's latest collaborations and creative partnerships in the world of AI fashion." />
+  <meta name="keywords" content="FinaFeels, AI fashion collaborations, creative partnerships, digital fashion projects" />
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/favicon.png" />
-  
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      --bg: #FAFAFA;
-      --text: #2C2C2C;
-      --accent: #FFB6B6;
-      --highlight: #A56EFF;
-      --border: #E0E0E0;
-      --soft: #F5E9FC;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-    }
-
-    .back-button {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      background-color: var(--highlight);
-      color: white;
-      text-decoration: none;
-      border-radius: 25px;
-      font-weight: 500;
-      font-size: 0.9rem;
-      margin: 1rem;
-      transition: all 0.3s ease;
-    }
-
-    .back-button:hover {
-      background-color: #8e5ce5;
-      transform: translateY(-2px);
-    }
-
-    header {
-      text-align: center;
-      padding: 4rem 1rem 2rem;
-      background: linear-gradient(to bottom, var(--soft), var(--bg));
-    }
-
-    header h1 {
-      font-size: 2.75rem;
-      margin-bottom: 0.5rem;
-      font-family: 'Playfair Display', serif;
-    }
-
-    header p {
-      font-size: 1.15rem;
-      color: #555;
-      max-width: 720px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-
-    .features-section {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      padding: 3rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .feature-tile {
-      background-color: white;
-      border-radius: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      overflow: hidden;
-      transition: transform 0.3s ease;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .feature-tile:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-
-    .feature-img {
-      background-color: #dcdcdc;
-      height: 180px;
-      width: 100%;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .feature-body {
-      padding: 1.5rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .feature-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .feature-desc {
-      font-size: 1rem;
-      color: #666;
-      margin-bottom: 1rem;
-      line-height: 1.5;
-    }
-
-    .feature-link {
-      color: var(--highlight);
-      font-weight: 500;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .feature-link:hover {
-      text-decoration: underline;
-      color: #8e5ce5;
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
-      
-      header p {
-        font-size: 1rem;
-        padding: 0 1rem;
-      }
-      
-      .features-section {
-        padding: 2rem 1rem;
-        gap: 1.5rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Centralized Navigation -->
+  <div id="nav-placeholder"></div>
+  <script>
+    fetch("nav.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("nav-placeholder").innerHTML = data;
+      });
+  </script>
 
   <a href="socials.html" class="back-button">← Back to Socials</a>
 
-  <header>
-    <h1>Featured Content</h1>
-    <p>Explore behind-the-scenes moments, style evolution, and the digital fashion future of FinaFeels and her collaborators.</p>
-  </header>
-
-  <section class="features-section">
-    <div class="feature-tile">
-      <div class="feature-img" style="background-image: url('assets/images/fina1.jpg');"></div>
-      <div class="feature-body">
-        <div class="feature-title">Behind the Scenes</div>
-        <div class="feature-desc">A look into how each visual, reel, and vibe comes together from concept to post.</div>
-        <a href="#" class="feature-link">Read more →</a>
-      </div>
+  <!-- Hero Section -->
+  <section class="collabs-magazine-hero">
+    <div class="container">
+      <h1>Featured Collaborations</h1>
+      <p>Discover Fina's latest creative partnerships and innovative projects</p>
     </div>
+  </section>
 
-    <div class="feature-tile">
-      <div class="feature-img" style="background-image: url('assets/images/fina2.jpg');"></div>
-      <div class="feature-body">
-        <div class="feature-title">Style Guide</div>
-        <div class="feature-desc">The evolving lookbook of FinaFeels — colors, textures, and thematic silhouettes.</div>
-        <a href="#" class="feature-link">Read more →</a>
-      </div>
+  <!-- Main Featured Collaboration -->
+  <section class="featured-collab-main">
+    <div class="container">
+      <article class="main-feature">
+        <div class="feature-image">
+          <img src="assets/images/fina1.jpg" alt="AI Fashion Showcase" />
+        </div>
+        <div class="feature-content">
+          <div class="feature-meta">
+            <span class="feature-category">Latest Project</span>
+            <span class="feature-date">January 2025</span>
+          </div>
+          <h2>AI Fashion Showcase</h2>
+          <p class="feature-description">
+            Fina's groundbreaking collaboration exploring the intersection of artificial intelligence and modern fashion design. This innovative digital showcase pushes the boundaries of what's possible when technology meets creativity, featuring cutting-edge AI-generated designs and immersive digital experiences.
+          </p>
+          <div class="feature-details">
+            <div class="collaboration-partners">
+              <h4>In Partnership With:</h4>
+              <p>Digital Fashion Collective, AI Design Lab</p>
+            </div>
+            <div class="project-highlights">
+              <h4>Project Highlights:</h4>
+              <ul>
+                <li>AI-generated fashion concepts</li>
+                <li>Interactive digital runway</li>
+                <li>Sustainable design principles</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
     </div>
+  </section>
 
-    <div class="feature-tile">
-      <div class="feature-img" style="background-image: url('assets/images/fina3.jpg');"></div>
-      <div class="feature-body">
-        <div class="feature-title">Creator Spotlight</div>
-        <div class="feature-desc">Get to know the artists and models who help shape the world of FinaFeels.</div>
-        <a href="#" class="feature-link">Read more →</a>
-      </div>
-    </div>
+  <!-- Past Collaborations Grid -->
+  <section class="past-collaborations">
+    <div class="container">
+      <h2>Past Collaborations</h2>
+      <div class="collabs-grid">
+        <article class="collab-card">
+          <div class="collab-image">
+            <img src="assets/images/fina2.jpg" alt="Digital Style Collection" />
+          </div>
+          <div class="collab-content">
+            <div class="collab-meta">
+              <span class="collab-category">Collection</span>
+              <span class="collab-date">December 2024</span>
+            </div>
+            <h3>Digital Style Collection</h3>
+            <p>A comprehensive exploration of digital fashion trends, featuring innovative textile simulations and virtual styling concepts.</p>
+            <div class="collab-partners">
+              <small>With: Virtual Couture Studio</small>
+            </div>
+          </div>
+        </article>
 
-    <div class="feature-tile">
-      <div class="feature-img" style="background-image: url('assets/images/fina4.jpg');"></div>
-      <div class="feature-body">
-        <div class="feature-title">Coming Soon</div>
-        <div class="feature-desc">Sneak peeks of what's next in the AI fashionverse, straight from the Studio.</div>
-        <a href="#" class="feature-link">Preview now →</a>
-      </div>
-    </div>
+        <article class="collab-card">
+          <div class="collab-image">
+            <img src="assets/images/fina3.jpg" alt="Creative Tech Partnership" />
+          </div>
+          <div class="collab-content">
+            <div class="collab-meta">
+              <span class="collab-category">Partnership</span>
+              <span class="collab-date">November 2024</span>
+            </div>
+            <h3>Creative Tech Partnership</h3>
+            <p>Bridging the gap between traditional fashion design and emerging AI technologies through collaborative innovation.</p>
+            <div class="collab-partners">
+              <small>With: TechFashion Labs</small>
+            </div>
+          </div>
+        </article>
 
-    <div class="feature-tile">
-      <div class="feature-img" style="background-image: url('assets/images/fina5.jpg');"></div>
-      <div class="feature-body">
-        <div class="feature-title">AI Fashion Trends</div>
-        <div class="feature-desc">Neural runways, synthetic fabrics, and the digital couture that's reshaping the scene.</div>
-        <a href="#" class="feature-link">Read more →</a>
-      </div>
-    </div>
+        <article class="collab-card">
+          <div class="collab-image">
+            <img src="assets/images/fina4.jpg" alt="Fashion Innovation Lab" />
+          </div>
+          <div class="collab-content">
+            <div class="collab-meta">
+              <span class="collab-category">Research</span>
+              <span class="collab-date">October 2024</span>
+            </div>
+            <h3>Fashion Innovation Lab</h3>
+            <p>Experimental research project focusing on sustainable AI-driven fashion design and ethical digital creation practices.</p>
+            <div class="collab-partners">
+              <small>With: Future Fashion Institute</small>
+            </div>
+          </div>
+        </article>
 
-    <div class="feature-tile">
-      <div class="feature-img" style="background-image: url('assets/images/fina1.jpg');"></div>
-      <div class="feature-body">
-        <div class="feature-title">Style Revolution</div>
-        <div class="feature-desc">How digital models like Fina are redefining identity, beauty, and visual storytelling.</div>
-        <a href="#" class="feature-link">Explore more →</a>
-      </div>
-    </div>
+        <article class="collab-card">
+          <div class="collab-image">
+            <img src="assets/images/fina5.jpg" alt="Digital Runway Experience" />
+          </div>
+          <div class="collab-content">
+            <div class="collab-meta">
+              <span class="collab-category">Experience</span>
+              <span class="collab-date">September 2024</span>
+            </div>
+            <h3>Digital Runway Experience</h3>
+            <p>An immersive virtual runway show showcasing the future of fashion presentation in digital spaces.</p>
+            <div class="collab-partners">
+              <small>With: Metaverse Fashion Week</small>
+            </div>
+          </div>
+        </article>
 
-    <div class="feature-tile">
-      <div class="feature-img" style="background-image: url('assets/images/fina2.jpg');"></div>
-      <div class="feature-body">
-        <div class="feature-title">Digital Fashion Future</div>
-        <div class="feature-desc">The next evolution: downloads, NFTs, virtual wearables, and hyper-personal styling.</div>
-        <a href="#" class="feature-link">See what's coming →</a>
+        <article class="collab-card">
+          <div class="collab-image">
+            <img src="assets/images/fina1.jpg" alt="AI Ethics in Fashion" />
+          </div>
+          <div class="collab-content">
+            <div class="collab-meta">
+              <span class="collab-category">Think Piece</span>
+              <span class="collab-date">August 2024</span>
+            </div>
+            <h3>AI Ethics in Fashion</h3>
+            <p>A thought-provoking collaboration examining the ethical implications of AI in fashion design and digital identity.</p>
+            <div class="collab-partners">
+              <small>With: Digital Ethics Collective</small>
+            </div>
+          </div>
+        </article>
+
+        <article class="collab-card">
+          <div class="collab-image">
+            <img src="assets/images/fina2.jpg" alt="Sustainable AI Fashion" />
+          </div>
+          <div class="collab-content">
+            <div class="collab-meta">
+              <span class="collab-category">Initiative</span>
+              <span class="collab-date">July 2024</span>
+            </div>
+            <h3>Sustainable AI Fashion</h3>
+            <p>Pioneering sustainable practices in AI-generated fashion design, focusing on environmental responsibility.</p>
+            <div class="collab-partners">
+              <small>With: Green Fashion Alliance</small>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
+  <script src="script.js"></script>
 </body>
 </html>
