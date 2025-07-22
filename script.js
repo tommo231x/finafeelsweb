@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             function startCarousel() {
                 if (!carouselInterval) {
-                    carouselInterval = setInterval(nextSlide, 4000);
+                    carouselInterval = setInterval(nextSlide, 1500);
                 }
             }
 
