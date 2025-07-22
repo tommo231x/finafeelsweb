@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,167 +29,138 @@
       });
   </script>
 
-  <a href="socials.html" class="back-button">← Back to Socials</a>
-
   <!-- Hero Header -->
-  <section class="collab-magazine-hero">
+  <section class="features-hero">
     <div class="container">
-      <h1>Featured Collaborations</h1>
-      <p>Monthly collab spotlights from the world of FinaFeels – fashion, AI, creativity.</p>
+      <div class="hero-content">
+        <a href="socials.html" class="back-link">← Back to Socials</a>
+        <h1>Featured Collaborations</h1>
+        <p>Monthly collab spotlights from the world of FinaFeels – fashion, AI, creativity.</p>
+      </div>
     </div>
   </section>
 
-  <!-- Main Collaboration Features -->
-  <main class="collab-magazine-content">
+  <!-- Main Content -->
+  <main class="features-main">
     <div class="container">
-      
-      <!-- January 2025 Feature -->
-      <article class="collab-feature-block" id="fina-jessie-dreamwave">
-        <div class="collab-header">
-          <h2>Fina x Jessie – Dreamwave Series</h2>
-          <span class="collab-date">January 2025</span>
-        </div>
-        
-        <div class="collab-description">
-          <p>An ethereal collaboration exploring the intersection of AI-generated fashion and dreamy aesthetic visuals. Jessie brings her signature style to complement Fina's digital artistry, creating a series that blurs the lines between reality and digital dreams. This monthly spotlight showcases how traditional photography meets cutting-edge AI fashion design.</p>
-        </div>
 
-        <div class="collab-gallery">
-          <div class="gallery-container">
-            <div class="gallery-slides">
-              <div class="slide active" style="background-image: url('assets/images/fina1.jpg');"></div>
-              <div class="slide" style="background-image: url('assets/images/fina2.jpg');"></div>
-              <div class="slide" style="background-image: url('assets/images/fina3.jpg');"></div>
-              <div class="slide" style="background-image: url('assets/images/fina4.jpg');"></div>
+      <!-- Current Feature -->
+      <section class="current-feature">
+        <div class="feature-badge">Current Feature</div>
+        <div class="feature-layout">
+          <div class="feature-content">
+            <div class="feature-meta">
+              <span class="feature-category">Fashion</span>
+              <span class="feature-date">January 2025</span>
             </div>
-            <button class="gallery-btn prev" onclick="changeSlide('fina-jessie-dreamwave', -1)">‹</button>
-            <button class="gallery-btn next" onclick="changeSlide('fina-jessie-dreamwave', 1)">›</button>
-            <div class="gallery-dots">
-              <span class="dot active" onclick="currentSlide('fina-jessie-dreamwave', 1)"></span>
-              <span class="dot" onclick="currentSlide('fina-jessie-dreamwave', 2)"></span>
-              <span class="dot" onclick="currentSlide('fina-jessie-dreamwave', 3)"></span>
-              <span class="dot" onclick="currentSlide('fina-jessie-dreamwave', 4)"></span>
+            <h2>Fina x Jessie – Dreamwave Series</h2>
+            <p class="feature-description">An ethereal collaboration exploring the intersection of AI-generated fashion and dreamy aesthetic visuals. Jessie brings her signature style to complement Fina's digital artistry, creating a series that blurs the lines between reality and digital dreams.</p>
+
+            <div class="feature-highlights">
+              <h4>Project Highlights</h4>
+              <ul>
+                <li>AI-generated fashion meets traditional photography</li>
+                <li>Dreamy aesthetic visual storytelling</li>
+                <li>Monthly collaborative series</li>
+                <li>Digital artistry showcase</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="feature-media">
+            <div class="media-gallery">
+              <div class="gallery-main">
+                <img src="assets/images/fina1.jpg" alt="Dreamwave Series Main" class="main-image active" data-index="0">
+                <img src="assets/images/fina2.jpg" alt="Dreamwave Series 2" class="main-image" data-index="1">
+                <img src="assets/images/fina3.jpg" alt="Dreamwave Series 3" class="main-image" data-index="2">
+                <img src="assets/images/fina4.jpg" alt="Dreamwave Series 4" class="main-image" data-index="3">
+              </div>
+              <div class="gallery-thumbnails">
+                <img src="assets/images/fina1.jpg" alt="Thumbnail 1" class="thumbnail active" data-index="0">
+                <img src="assets/images/fina2.jpg" alt="Thumbnail 2" class="thumbnail" data-index="1">
+                <img src="assets/images/fina3.jpg" alt="Thumbnail 3" class="thumbnail" data-index="2">
+                <img src="assets/images/fina4.jpg" alt="Thumbnail 4" class="thumbnail" data-index="3">
+              </div>
+            </div>
+
+            <div class="media-video">
+              <video controls poster="assets/images/fina1.jpg">
+                <source src="assets/videos/studio1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <p class="video-caption">Behind the scenes: Creating the Dreamwave aesthetic</p>
             </div>
           </div>
         </div>
-
-        <div class="collab-video no-print">
-          <div class="video-container">
-            <video controls poster="assets/images/fina1.jpg">
-              <source src="assets/videos/studio1.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <p class="video-caption">Behind the scenes: Creating the Dreamwave aesthetic</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- December 2024 Feature -->
-      <article class="collab-feature-block" id="digital-runway-experience">
-        <div class="collab-header">
-          <h2>Fina x MetaFashion – Digital Runway Experience</h2>
-          <span class="collab-date">December 2024</span>
-        </div>
-        
-        <div class="collab-description">
-          <p>A groundbreaking virtual runway show that redefined fashion presentation in digital spaces. This collaboration with MetaFashion created an immersive experience where AI-generated garments came to life in stunning virtual environments. The project pushed boundaries in digital fashion storytelling and virtual world creation.</p>
-        </div>
-
-        <div class="collab-gallery">
-          <div class="gallery-container">
-            <div class="gallery-slides">
-              <div class="slide active" style="background-image: url('assets/images/fina5.jpg');"></div>
-              <div class="slide" style="background-image: url('assets/images/fina1.jpg');"></div>
-              <div class="slide" style="background-image: url('assets/images/fina2.jpg');"></div>
-            </div>
-            <button class="gallery-btn prev" onclick="changeSlide('digital-runway-experience', -1)">‹</button>
-            <button class="gallery-btn next" onclick="changeSlide('digital-runway-experience', 1)">›</button>
-            <div class="gallery-dots">
-              <span class="dot active" onclick="currentSlide('digital-runway-experience', 1)"></span>
-              <span class="dot" onclick="currentSlide('digital-runway-experience', 2)"></span>
-              <span class="dot" onclick="currentSlide('digital-runway-experience', 3)"></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="collab-video no-print">
-          <div class="video-container">
-            <video controls poster="assets/images/fina5.jpg">
-              <source src="assets/videos/studio2.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <p class="video-caption">Virtual runway highlights and behind-the-scenes footage</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- November 2024 Feature -->
-      <article class="collab-feature-block" id="sustainable-ai-fashion">
-        <div class="collab-header">
-          <h2>Fina x EcoDesign Lab – Sustainable AI Fashion</h2>
-          <span class="collab-date">November 2024</span>
-        </div>
-        
-        <div class="collab-description">
-          <p>An innovative exploration of sustainability in AI-generated fashion design. This collaboration focused on creating beautiful designs while maintaining environmental consciousness, proving that technology and eco-responsibility can work hand in hand. The project established new standards for ethical AI fashion creation.</p>
-        </div>
-
-        <div class="collab-gallery">
-          <div class="gallery-container">
-            <div class="gallery-slides">
-              <div class="slide active" style="background-image: url('assets/images/fina3.jpg');"></div>
-              <div class="slide" style="background-image: url('assets/images/fina4.jpg');"></div>
-              <div class="slide" style="background-image: url('assets/images/fina5.jpg');"></div>
-              <div class="slide" style="background-image: url('assets/images/fina1.jpg');"></div>
-            </div>
-            <button class="gallery-btn prev" onclick="changeSlide('sustainable-ai-fashion', -1)">‹</button>
-            <button class="gallery-btn next" onclick="changeSlide('sustainable-ai-fashion', 1)">›</button>
-            <div class="gallery-dots">
-              <span class="dot active" onclick="currentSlide('sustainable-ai-fashion', 1)"></span>
-              <span class="dot" onclick="currentSlide('sustainable-ai-fashion', 2)"></span>
-              <span class="dot" onclick="currentSlide('sustainable-ai-fashion', 3)"></span>
-              <span class="dot" onclick="currentSlide('sustainable-ai-fashion', 4)"></span>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Archive Separator -->
-      <section class="archive-separator">
-        <h2>📦 Archived Features</h2>
-        <p>Explore previous collaborations and creative partnerships</p>
       </section>
 
-      <!-- Archive Cards -->
-      <section class="archive-grid">
-        <div class="archive-card" onclick="scrollToSection('digital-runway-experience')">
-          <div class="archive-image">
-            <img src="assets/images/fina5.jpg" alt="Digital Runway Experience">
-          </div>
-          <div class="archive-content">
-            <h3>Digital Runway Experience</h3>
-            <span class="archive-date">December 2024</span>
-          </div>
-        </div>
+      <!-- Past Features -->
+      <section class="past-features">
+        <h2>Past Collaborations</h2>
 
-        <div class="archive-card" onclick="scrollToSection('sustainable-ai-fashion')">
-          <div class="archive-image">
-            <img src="assets/images/fina3.jpg" alt="Sustainable AI Fashion">
-          </div>
-          <div class="archive-content">
-            <h3>Sustainable AI Fashion</h3>
-            <span class="archive-date">November 2024</span>
-          </div>
-        </div>
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="card-image">
+              <img src="assets/images/fina5.jpg" alt="Digital Runway Experience">
+              <div class="card-overlay">
+                <span class="card-date">December 2024</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3>Fina x MetaFashion – Digital Runway Experience</h3>
+              <p>A groundbreaking virtual runway show that redefined fashion presentation in digital spaces. This collaboration created an immersive experience where AI-generated garments came to life.</p>
+              <div class="card-tags">
+                <span>Virtual Reality</span>
+                <span>Fashion Show</span>
+                <span>Digital Art</span>
+              </div>
+            </div>
+          </article>
 
-        <div class="archive-card">
-          <div class="archive-image">
-            <img src="assets/images/fina2.jpg" alt="Coming Soon">
-          </div>
-          <div class="archive-content">
-            <h3>Creative Vision Series</h3>
-            <span class="archive-date">October 2024</span>
-          </div>
+          <article class="feature-card">
+            <div class="card-image">
+              <img src="assets/images/fina3.jpg" alt="Sustainable AI Fashion">
+              <div class="card-overlay">
+                <span class="card-date">November 2024</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3>Fina x EcoDesign Lab – Sustainable AI Fashion</h3>
+              <p>An innovative exploration of sustainability in AI-generated fashion design. This collaboration focused on creating beautiful designs while maintaining environmental consciousness.</p>
+              <div class="card-tags">
+                <span>Sustainability</span>
+                <span>Eco Fashion</span>
+                <span>Innovation</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="card-image">
+              <img src="assets/images/fina2.jpg" alt="Creative Vision Series">
+              <div class="card-overlay">
+                <span class="card-date">October 2024</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3>Creative Vision Series</h3>
+              <p>A multi-part series featuring collaborations with photographers, stylists, and digital artists exploring the boundaries of AI creativity in fashion.</p>
+              <div class="card-tags">
+                <span>Photography</span>
+                <span>Styling</span>
+                <span>Series</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="features-cta">
+        <div class="cta-content">
+          <h2>Want to Collaborate?</h2>
+          <p>Interested in working with Fina on your next creative project? Let's explore the possibilities together.</p>
+          <a href="studio.html" class="btn btn-primary">Visit Our Studio</a>
         </div>
       </section>
 
@@ -198,67 +168,31 @@
   </main>
 
   <script src="script.js"></script>
-  
-  <!-- Gallery JavaScript -->
+
+  <!-- Enhanced Gallery JavaScript -->
   <script>
-    // Gallery functionality
-    const galleries = {};
-
-    function initializeGallery(galleryId) {
-      galleries[galleryId] = {
-        currentSlide: 1,
-        totalSlides: document.querySelector(`#${galleryId} .gallery-slides`).children.length
-      };
-    }
-
-    function changeSlide(galleryId, direction) {
-      if (!galleries[galleryId]) initializeGallery(galleryId);
-      
-      const gallery = galleries[galleryId];
-      gallery.currentSlide += direction;
-      
-      if (gallery.currentSlide > gallery.totalSlides) {
-        gallery.currentSlide = 1;
-      }
-      if (gallery.currentSlide < 1) {
-        gallery.currentSlide = gallery.totalSlides;
-      }
-      
-      showSlide(galleryId, gallery.currentSlide);
-    }
-
-    function currentSlide(galleryId, slideNumber) {
-      if (!galleries[galleryId]) initializeGallery(galleryId);
-      
-      galleries[galleryId].currentSlide = slideNumber;
-      showSlide(galleryId, slideNumber);
-    }
-
-    function showSlide(galleryId, slideNumber) {
-      const container = document.querySelector(`#${galleryId} .gallery-container`);
-      const slides = container.querySelectorAll('.slide');
-      const dots = container.querySelectorAll('.dot');
-      
-      slides.forEach((slide, index) => {
-        slide.classList.toggle('active', index === slideNumber - 1);
-      });
-      
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === slideNumber - 1);
-      });
-    }
-
-    function scrollToSection(sectionId) {
-      document.getElementById(sectionId).scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-
-    // Initialize all galleries on page load
     document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.collab-feature-block').forEach(block => {
-        initializeGallery(block.id);
+      // Gallery functionality
+      const thumbnails = document.querySelectorAll('.thumbnail');
+      const mainImages = document.querySelectorAll('.main-image');
+
+      thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function() {
+          const index = this.dataset.index;
+
+          // Remove active class from all
+          thumbnails.forEach(t => t.classList.remove('active'));
+          mainImages.forEach(img => img.classList.remove('active'));
+
+          // Add active class to selected
+          this.classList.add('active');
+          mainImages[index].classList.add('active');
+        });
+      });
+
+      // Add smooth transitions
+      mainImages.forEach(img => {
+        img.style.transition = 'opacity 0.3s ease';
       });
     });
   </script>
