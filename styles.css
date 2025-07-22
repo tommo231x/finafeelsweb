@@ -157,7 +157,7 @@ p {
 }
 
 .floating-fina {
-  bottom: 3rem;
+  bottom: 2rem;
   left: 3rem;
   animation: floatIn 1.2s ease-out 0.5s both;
 }
