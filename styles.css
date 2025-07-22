@@ -164,7 +164,7 @@ p {
 
 .floating-studio {
   top: 3rem;
-  right: 3rem;
+  right: 18%;
   animation: floatIn 1.2s ease-out 0.8s both;
 }
 
