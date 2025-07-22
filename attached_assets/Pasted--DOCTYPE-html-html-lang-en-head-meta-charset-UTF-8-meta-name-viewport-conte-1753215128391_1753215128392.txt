@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Featured Collaborations – FinaFeels</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #FAFAFA;
+      color: #2C2C2C;
+    }
+    header {
+      padding: 3rem 1rem 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+    }
+    .collab-section {
+      min-height: 100vh;
+      padding: 2rem 1rem;
+      border-bottom: 1px solid #E0E0E0;
+    }
+    .collab-title {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .collab-desc {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+    .collab-media img, .collab-media video {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .no-print {
+      display: block;
+    }
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Featured Collaborations</h1>
+    <p style="color:#666; max-width: 720px; margin: 0 auto;">Scroll through our most recent collabs. Each one is a fully immersive, flexible storytelling block powered by Firebase.</p>
+  </header>
+
+  <main id="collab-feed"></main>
+
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
+    import { getFirestore, collection, getDocs, query, orderBy } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
+    import { getStorage, ref, getDownloadURL } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js';
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBNAiBbjBl7SpqwL0NiJmx3BVuRrd1FVBA",
+      authDomain: "finafeels-39852.firebaseapp.com",
+      projectId: "finafeels-39852",
+      storageBucket: "finafeels-39852.appspot.com",
+      messagingSenderId: "962083690885",
+      appId: "1:962083690885:web:115469c62f982fa24fccec",
+      measurementId: "G-C60L4MRLYR"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const storage = getStorage(app);
+
+    const feed = document.getElementById('collab-feed');
+    const collabRef = collection(db, 'collaborations');
+    const q = query(collabRef, orderBy('date', 'desc'));
+
+    const renderCollab = async (data) => {
+      const section = document.createElement('section');
+      section.className = 'collab-section';
+
+      section.innerHTML = `
+        <h2 class="collab-title">${data.title}</h2>
+        <p class="collab-desc">${data.description}</p>
+        <div class="collab-media"></div>
+      `;
+
+      const mediaContainer = section.querySelector('.collab-media');
+
+      for (const path of data.images || []) {
+        const url = await getDownloadURL(ref(storage, path));
+        const img = document.createElement('img');
+        img.src = url;
+        mediaContainer.appendChild(img);
+      }
+
+      if (data.video) {
+        const videoURL = await getDownloadURL(ref(storage, data.video));
+        const video = document.createElement('video');
+        video.controls = true;
+        video.className = 'no-print';
+        video.src = videoURL;
+        mediaContainer.appendChild(video);
+      }
+
+      feed.appendChild(section);
+    };
+
+    const loadCollabs = async () => {
+      const snapshot = await getDocs(q);
+      snapshot.forEach(doc => renderCollab(doc.data()));
+    };
+
+    loadCollabs();
+  </script>
+</body>
+</html>
