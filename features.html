@@ -78,7 +78,7 @@
     const storage = getStorage(app);
 
     const feed = document.getElementById('collab-feed');
-    const collabRef = collection(db, 'collaborations');
+    const collabRef = collection(db, 'FinaFeels Collaboration Feature');
     const q = query(collabRef, orderBy('date', 'desc'));
 
     const renderCollab = async (data) => {
