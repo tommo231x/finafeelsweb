@@ -445,28 +445,31 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// CSS for animations
-const animationStyle = document.createElement('style');
-animationStyle.textContent = `
-    @keyframes ripple {
-        to {
-            transform: scale(4);
-            opacity: 0;
+// CSS for animations (only add if not already added)
+if (!document.querySelector('#fina-animations')) {
+    const animationStyle = document.createElement('style');
+    animationStyle.id = 'fina-animations';
+    animationStyle.textContent = `
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
         }
-    }
-    @keyframes fadeInOut {
-        0%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
-        50% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-    }
-    .animated {
-        animation-duration: 1s;
-        animation-fill-mode: both;
-    }
-    .fadeInUp {
-        animation-name: fadeInUp;
-    }
-`;
-document.head.appendChild(animationStyle);
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+            50% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        }
+        .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+        .fadeInUp {
+            animation-name: fadeInUp;
+        }
+    `;
+    document.head.appendChild(animationStyle);
+}
 
 // === Firebase Auth: Email Link Sign-In ===
 // Wait for Firebase to be available

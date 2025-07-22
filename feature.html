@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FinaFeels – Feature Placeholder Page</title>
+  <style>
+    :root {
+      --bg: #FAFAFA;
+      --text: #2C2C2C;
+      --accent: #FFB6B6;
+      --highlight: #A56EFF;
+      --border: #E0E0E0;
+      --soft: #F5E9FC;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      background: linear-gradient(to bottom, var(--soft), var(--bg));
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #666;
+    }
+
+    .layout-toggle {
+      text-align: center;
+      margin: 1rem auto 2rem;
+    }
+
+    .layout-toggle button {
+      padding: 0.5rem 1.25rem;
+      margin: 0 0.5rem;
+      background-color: var(--highlight);
+      color: white;
+      border: none;
+      border-radius: 999px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .layout-toggle button:hover {
+      background-color: #8e5ce5;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .layout-style-a {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .placeholder-img {
+      width: 100%;
+      height: 200px;
+      background-color: #e0e0e0;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 1.25rem;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-text {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .layout-style-b {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      padding: 2rem;
+    }
+
+    .feature-block {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .feature-image {
+      flex: 1 1 50%;
+      min-height: 250px;
+      background-color: #d4d4d4;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .feature-content {
+      flex: 1 1 50%;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .feature-title {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .feature-desc {
+      font-size: 1.05rem;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      .feature-block {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>FinaFeels – Feature Layout Preview</h1>
+    <p>Placeholder content and swappable layouts for featured collabs and social stories.</p>
+  </header>
+
+  <div class="layout-toggle">
+    <button onclick="switchLayout('a')">Grid Layout</button>
+    <button onclick="switchLayout('b')">Feature Layout</button>
+  </div>
+
+  <section class="layout-style-a" id="layoutA">
+    <div class="card">
+      <div class="placeholder-img"></div>
+      <div class="card-body">
+        <div class="card-title">[Placeholder Title A1]</div>
+        <div class="card-text">[Placeholder description text for this featured collab]</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="placeholder-img"></div>
+      <div class="card-body">
+        <div class="card-title">[Placeholder Title A2]</div>
+        <div class="card-text">[Another description placeholder text here]</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="layout-style-b hidden" id="layoutB">
+    <div class="feature-block">
+      <div class="feature-image" style="background-image: url('/images/placeholder-feature-1.jpg');"></div>
+      <div class="feature-content">
+        <div class="feature-title">[Feature Title B1]</div>
+        <div class="feature-desc">[Full description text here for this hero-style featured collaboration.]</div>
+      </div>
+    </div>
+    <div class="feature-block">
+      <div class="feature-image" style="background-image: url('/images/placeholder-feature-2.jpg');"></div>
+      <div class="feature-content">
+        <div class="feature-title">[Feature Title B2]</div>
+        <div class="feature-desc">[Another full-width featured description section. Easily swappable background image.]</div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function switchLayout(style) {
+      document.getElementById('layoutA').classList.toggle('hidden', style !== 'a');
+      document.getElementById('layoutB').classList.toggle('hidden', style !== 'b');
+    }
+  </script>
+
+</body>
+</html>
