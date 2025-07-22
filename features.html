@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,74 +9,40 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: 'Inter', sans-serif;
       background-color: #FAFAFA;
       color: #2C2C2C;
-      line-height: 1.6;
     }
-
-    .container {
-      max-width: 960px;
-      margin: auto;
-      padding: 2rem 1rem;
-    }
-
     header {
+      padding: 3rem 1rem 2rem;
       text-align: center;
-      padding: 3rem 1rem 1rem;
     }
-
     header h1 {
-      font-size: 2.75rem;
-      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
     }
-
-    header p {
-      color: #666;
-      font-size: 1.1rem;
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
     .collab-section {
-      margin: 4rem 0;
-      padding-bottom: 2rem;
+      min-height: 100vh;
+      padding: 2rem 1rem;
       border-bottom: 1px solid #E0E0E0;
     }
-
-    .collab-section h2 {
+    .collab-title {
       font-size: 2rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
-
-    .collab-text {
+    .collab-desc {
       font-size: 1rem;
+      color: #555;
       margin-bottom: 1.5rem;
     }
-
-    .collab-img, .collab-video {
-      margin: 1rem 0;
+    .collab-media img, .collab-media video {
       max-width: 100%;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
-
-    .collab-img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .collab-video video {
-      width: 100%;
-      border-radius: 10px;
-    }
-
     .no-print {
       display: block;
     }
-
     @media print {
       .no-print {
         display: none !important;
@@ -86,42 +53,71 @@
 <body>
   <header>
     <h1>Featured Collaborations</h1>
-    <p>Each month, explore a new collab at the top. Scroll down to see previous stories and projects.</p>
+    <p style="color:#666; max-width: 720px; margin: 0 auto;">Scroll through our most recent collabs. Each one is a fully immersive, flexible storytelling block powered by Firebase.</p>
   </header>
 
-  <main class="container">
+  <main id="collab-feed"></main>
 
-    <!-- Newest Collaboration at the Top -->
-    <article class="collab-section">
-      <h2>Fina x Jessie – Dreamwave Series</h2>
-      <p class="collab-text">We dove into early 2000s Y2K fashion, styled with soft lens flares and pastel overlays. Jessie brought incredible energy and her own digital wardrobe.</p>
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
+    import { getFirestore, collection, getDocs, query, orderBy } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
+    import { getStorage, ref, getDownloadURL } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js';
 
-      <img src="/images/placeholder-1.jpg" alt="Jessie Collab Look 1" class="collab-img">
-      <p class="collab-text">We captured this look on a mirrored rooftop set built in MidJourney and fine-tuned in Photoshop. The shadows hit just right.</p>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBNAiBbjBl7SpqwL0NiJmx3BVuRrd1FVBA",
+      authDomain: "finafeels-39852.firebaseapp.com",
+      projectId: "finafeels-39852",
+      storageBucket: "finafeels-39852.appspot.com",
+      messagingSenderId: "962083690885",
+      appId: "1:962083690885:web:115469c62f982fa24fccec",
+      measurementId: "G-C60L4MRLYR"
+    };
 
-      <video class="collab-video no-print" controls>
-        <source src="/videos/jessie-feature.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const storage = getStorage(app);
 
-      <img src="/images/placeholder-2.jpg" alt="Jessie Portrait Close-Up" class="collab-img">
-      <p class="collab-text">This portrait shows the fine blend between virtual fabric and skin texture overlays. We wanted surreal realism here.</p>
-    </article>
+    const feed = document.getElementById('collab-feed');
+    const collabRef = collection(db, 'collaborations');
+    const q = query(collabRef, orderBy('date', 'desc'));
 
-    <!-- Previous Collaboration -->
-    <article class="collab-section">
-      <h2>Fina x Clara – Gothic Glitch</h2>
-      <p class="collab-text">Dark mode meets cyberpunk Tokyo. Clara and I created a broken mirror narrative using glitch textures, velvet lace, and electric shadows.</p>
+    const renderCollab = async (data) => {
+      const section = document.createElement('section');
+      section.className = 'collab-section';
 
-      <img src="/images/placeholder-goth1.jpg" alt="Clara glitch style" class="collab-img">
-      <p class="collab-text">This shoot was done in multiple aspect ratios, styled to feel disjointed but elegant.</p>
+      section.innerHTML = `
+        <h2 class="collab-title">${data.title}</h2>
+        <p class="collab-desc">${data.description}</p>
+        <div class="collab-media"></div>
+      `;
 
-      <video class="collab-video no-print" controls>
-        <source src="/videos/clara-glitch.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </article>
+      const mediaContainer = section.querySelector('.collab-media');
 
-  </main>
+      for (const path of data.images || []) {
+        const url = await getDownloadURL(ref(storage, path));
+        const img = document.createElement('img');
+        img.src = url;
+        mediaContainer.appendChild(img);
+      }
+
+      if (data.video) {
+        const videoURL = await getDownloadURL(ref(storage, data.video));
+        const video = document.createElement('video');
+        video.controls = true;
+        video.className = 'no-print';
+        video.src = videoURL;
+        mediaContainer.appendChild(video);
+      }
+
+      feed.appendChild(section);
+    };
+
+    const loadCollabs = async () => {
+      const snapshot = await getDocs(q);
+      snapshot.forEach(doc => renderCollab(doc.data()));
+    };
+
+    loadCollabs();
+  </script>
 </body>
 </html>
