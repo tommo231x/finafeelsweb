@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <!-- Primary Meta Tags -->
   <title>FinaFeels – Enter the World of AI Imagination</title>
@@ -75,13 +75,14 @@
     <a href="studio.html" class="button">Enter</a>
   </div>
 
-  <!-- Firebase SDK (v8 compat for auth) -->
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+  <!-- Your JS -->
+  <script src="script.js"></script>
 
-  <!-- Firebase Config -->
-  <script>
+  <!-- Firebase Analytics -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+
     const firebaseConfig = {
       apiKey: "AIzaSyBNAiBbjBl7SpqwL0NiJmx3BVuRrd1FVBA",
       authDomain: "finafeels-39852.firebaseapp.com",
@@ -92,11 +93,8 @@
       measurementId: "G-C60L4MRLYR"
     };
 
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
   </script>
-
-  <!-- Your JS -->
-  <script src="script.js"></script>
 </body>
 </html>
