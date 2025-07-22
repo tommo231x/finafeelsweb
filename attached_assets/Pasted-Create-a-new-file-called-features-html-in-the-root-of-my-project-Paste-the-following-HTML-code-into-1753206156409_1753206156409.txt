@@ -1,0 +1,182 @@
+Create a new file called features.html in the root of my project.
+Paste the following HTML code into it. This will be the main Features page for my FinaFeels website. It should display all my featured editorial content in a clean and stylish layout using placeholder images and consistent colors.
+
+html
+Copy
+Edit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FinaFeels – Features</title>
+  <style>
+    :root {
+      --bg: #FAFAFA;
+      --text: #2C2C2C;
+      --accent: #FFB6B6;
+      --highlight: #A56EFF;
+      --border: #E0E0E0;
+      --soft: #F5E9FC;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+      background: linear-gradient(to bottom, var(--soft), var(--bg));
+    }
+
+    header h1 {
+      font-size: 2.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.15rem;
+      color: #555;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .features-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 3rem 2rem;
+    }
+
+    .feature-tile {
+      background-color: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .feature-tile:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-img {
+      background-color: #dcdcdc;
+      height: 180px;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .feature-body {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .feature-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-desc {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .feature-link {
+      color: var(--highlight);
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .feature-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Featured Content</h1>
+    <p>Explore behind-the-scenes moments, style evolution, and the digital fashion future of FinaFeels and her collaborators.</p>
+  </header>
+
+  <section class="features-section">
+    <div class="feature-tile">
+      <div class="feature-img" style="background-image: url('/images/placeholder-bts.jpg');"></div>
+      <div class="feature-body">
+        <div class="feature-title">Behind the Scenes</div>
+        <div class="feature-desc">A look into how each visual, reel, and vibe comes together from concept to post.</div>
+        <a href="#" class="feature-link">Read more →</a>
+      </div>
+    </div>
+
+    <div class="feature-tile">
+      <div class="feature-img" style="background-image: url('/images/placeholder-style.jpg');"></div>
+      <div class="feature-body">
+        <div class="feature-title">Style Guide</div>
+        <div class="feature-desc">The evolving lookbook of FinaFeels — colors, textures, and thematic silhouettes.</div>
+        <a href="#" class="feature-link">Read more →</a>
+      </div>
+    </div>
+
+    <div class="feature-tile">
+      <div class="feature-img" style="background-image: url('/images/placeholder-spotlight.jpg');"></div>
+      <div class="feature-body">
+        <div class="feature-title">Creator Spotlight</div>
+        <div class="feature-desc">Get to know the artists and models who help shape the world of FinaFeels.</div>
+        <a href="#" class="feature-link">Read more →</a>
+      </div>
+    </div>
+
+    <div class="feature-tile">
+      <div class="feature-img" style="background-image: url('/images/placeholder-soon.jpg');"></div>
+      <div class="feature-body">
+        <div class="feature-title">Coming Soon</div>
+        <div class="feature-desc">Sneak peeks of what's next in the AI fashionverse, straight from the Studio.</div>
+        <a href="#" class="feature-link">Preview now →</a>
+      </div>
+    </div>
+
+    <div class="feature-tile">
+      <div class="feature-img" style="background-image: url('/images/placeholder-trends.jpg');"></div>
+      <div class="feature-body">
+        <div class="feature-title">AI Fashion Trends</div>
+        <div class="feature-desc">Neural runways, synthetic fabrics, and the digital couture that’s reshaping the scene.</div>
+        <a href="#" class="feature-link">Read more →</a>
+      </div>
+    </div>
+
+    <div class="feature-tile">
+      <div class="feature-img" style="background-image: url('/images/placeholder-revolution.jpg');"></div>
+      <div class="feature-body">
+        <div class="feature-title">Style Revolution</div>
+        <div class="feature-desc">How digital models like Fina are redefining identity, beauty, and visual storytelling.</div>
+        <a href="#" class="feature-link">Explore more →</a>
+      </div>
+    </div>
+
+    <div class="feature-tile">
+      <div class="feature-img" style="background-image: url('/images/placeholder-future.jpg');"></div>
+      <div class="feature-body">
+        <div class="feature-title">Digital Fashion Future</div>
+        <div class="feature-desc">The next evolution: downloads, NFTs, virtual wearables, and hyper-personal styling.</div>
+        <a href="#" class="feature-link">See what’s coming →</a>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
