@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Featured Collaborations – FinaFeels</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #FAFAFA;
+      color: #2C2C2C;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    .features-hero {
+      background: linear-gradient(to bottom, #F5E9FC, #FAFAFA);
+      padding: 4rem 1rem 2rem;
+      text-align: center;
+    }
+
+    .features-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .features-hero p {
+      color: #666;
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    .collab-block {
+      margin: 4rem 0;
+    }
+
+    .collab-title {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .collab-desc {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+
+    .collab-gallery {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .collab-gallery img {
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      height: auto;
+      max-height: 500px;
+      max-width: 800px;
+      width: 100%;
+      object-fit: cover;
+      flex: 0 0 auto;
+    }
+
+    .collab-video {
+      margin-top: 1rem;
+      max-width: 800px;
+    }
+
+    .collab-video video {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .no-print {
+      display: block;
+    }
+
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+    }
+
+    .archive-section {
+      border-top: 1px solid #E0E0E0;
+      margin-top: 4rem;
+      padding-top: 2rem;
+    }
+
+    .archive-section h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .archive-cards {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+    }
+
+    .archive-card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      padding: 1rem;
+      flex: 0 0 250px;
+    }
+
+    .archive-card img {
+      width: 100%;
+      border-radius: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .archive-card h3 {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <section class="features-hero">
+    <div class="container">
+      <h1>Featured Collaborations</h1>
+      <p>Monthly collab spotlights from the world of FinaFeels – fashion, AI, creativity.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <!-- Collab 1 -->
+    <section class="collab-block">
+      <h2 class="collab-title">Fina x Jessie – Dreamwave Series</h2>
+      <p class="collab-desc">A Y2K-inspired AI fashion shoot blending pastel tones, lens flares, and nostalgic aesthetics.</p>
+
+      <div class="collab-gallery">
+        <img src="/images/placeholder-16x9.jpg" alt="Collab Image 1" />
+        <img src="/images/placeholder-4x5.jpg" alt="Collab Image 2" />
+        <img src="/images/placeholder-9x16.jpg" alt="Collab Image 3" />
+      </div>
+
+      <div class="collab-video no-print">
+        <video controls>
+          <source src="/videos/collab-video-placeholder.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+
+    <!-- Collab 2 -->
+    <section class="collab-block">
+      <h2 class="collab-title">Fina x Clara – Gothic Glitch</h2>
+      <p class="collab-desc">A collaboration exploring glitch fashion, Tokyo cyberpunk, and digital duality.</p>
+
+      <div class="collab-gallery">
+        <img src="/images/placeholder-goth1.jpg" alt="Gothic Image 1" />
+        <img src="/images/placeholder-goth2.jpg" alt="Gothic Image 2" />
+      </div>
+    </section>
+
+    <!-- Archive Section -->
+    <section class="archive-section">
+      <h2>📦 Archived Features</h2>
+      <div class="archive-cards">
+        <div class="archive-card">
+          <img src="/images/archive-june.jpg" alt="June Preview" />
+          <h3>Fina x Laura – Dutch Dream Pop</h3>
+        </div>
+        <div class="archive-card">
+          <img src="/images/archive-may.jpg" alt="May Preview" />
+          <h3>Fina x Rick – Mirror Fragment</h3>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
