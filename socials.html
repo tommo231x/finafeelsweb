@@ -9,18 +9,31 @@
 <body>
   <header>
     <h1>Fina's Social World</h1>
-    <p>Connect with Fina and explore her latest collaborations.</p>
+    <p>Connect with Fina and explore her latest collaborations and creative circle.</p>
   </header>
 
   <main>
-    <!-- Latest Collaboration Card -->
+    <!-- Latest Collaboration Section -->
     <section class="collab-preview-card">
       <h2>Latest Collaboration</h2>
-      <img src="placeholder.jpg" alt="Latest Collaboration" style="max-width:100%; border-radius:10px;" />
+      <img id="latest-collab-image" src="placeholder.jpg" alt="Latest Collaboration" style="max-width:100%; border-radius:10px;" />
+      <br/>
+      <a href="features.html" class="button-link">View All Collaborations</a>
     </section>
 
-    <!-- Other content (unchanged) -->
-    <section>
+    <!-- Stylists & Creative Circle (restored) -->
+    <section class="social-circle">
+      <h2>Creative Circle</h2>
+      <ul>
+        <li>Stylist: <a href="#">Person 1</a></li>
+        <li>Stylist: <a href="#">Person 2</a></li>
+        <li>Makeup Artist: <a href="#">Person 3</a></li>
+        <li>Photographer: <a href="#">Person 4</a></li>
+      </ul>
+    </section>
+
+    <!-- Social Links (restored) -->
+    <section class="social-links">
       <h2>Connect with Fina</h2>
       <ul>
         <li><a href="#">Instagram</a></li>
@@ -60,7 +73,7 @@
         const latestData = snapshot.docs[0].data();
         if (latestData.Images && latestData.Images.length > 0) {
           const imageURL = await getDownloadURL(ref(storage, latestData.Images[0]));
-          const latestImage = document.querySelector('.collab-preview-card img');
+          const latestImage = document.getElementById('latest-collab-image');
           if (latestImage) {
             latestImage.src = imageURL;
             latestImage.alt = latestData.Title || "Latest Collaboration";
