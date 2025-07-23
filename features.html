@@ -81,21 +81,21 @@
 
     const feed = document.getElementById('collab-feed');
     const collabRef = collection(db, 'FinaFeels Collaboration Feature');
-    const q = collabRef;
+    const q = query(collabRef, orderBy('Date', 'desc'));
 
     const renderCollab = async (data) => {
       const section = document.createElement('section');
       section.className = 'collab-section';
 
       section.innerHTML = `
-        <h2 class="collab-title">${data.title}</h2>
-        <p class="collab-desc">${data.description}</p>
+        <h2 class="collab-title">${data.Title}</h2>
+        <p class="collab-desc">${data.Description}</p>
         <div class="collab-media"></div>
       `;
 
       const mediaContainer = section.querySelector('.collab-media');
 
-      for (const path of data.images || []) {
+      for (const path of data.Images || []) {
         const url = await getDownloadURL(ref(storage, path));
         console.log("Image URL:", url);
         const img = document.createElement('img');
@@ -103,8 +103,8 @@
         mediaContainer.appendChild(img);
       }
 
-      if (data.video) {
-        const videoURL = await getDownloadURL(ref(storage, data.video));
+      if (data.Video) {
+        const videoURL = await getDownloadURL(ref(storage, data.Video));
         console.log("Video URL:", videoURL);
         const video = document.createElement('video');
         video.controls = true;
