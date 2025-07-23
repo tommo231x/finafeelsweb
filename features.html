@@ -9,37 +9,69 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #FAFAFA;
+      /* Gradient background */
+      background: linear-gradient(135deg, #f8cdda 0%, #1d2b64 100%);
       color: #2C2C2C;
     }
 
     header {
       padding: 3rem 1rem 2rem;
       text-align: center;
+      position: relative;
     }
 
     header h1 {
       font-size: 2.5rem;
+      color: #ffffff;
     }
 
-    /* Magazine-style layout */
+    header p {
+      color: #f5f5f5;
+    }
+
+    /* Back button styling */
+    .back-button {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      padding: 10px 18px;
+      border-radius: 25px;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .back-button:hover {
+      background: rgba(255, 255, 255, 0.4);
+      transform: translateX(-2px);
+    }
+
     .collab-section {
       max-width: 800px;
-      margin: 0 auto;
+      margin: 2rem auto;
       padding: 2rem 1rem;
-      border-bottom: 1px solid #E0E0E0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       display: flex;
       flex-direction: column;
       align-items: center;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 15px;
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(6px);
     }
 
     .collab-media img {
       width: auto;
       max-width: 100%;
-      max-height: 80vh; /* prevents overly tall images */
+      max-height: 80vh;
       margin-bottom: 1rem;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
     }
 
     .collab-media video {
@@ -47,18 +79,19 @@
       max-width: 600px;
       margin-bottom: 1rem;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
     }
 
     .collab-title {
       font-size: 2rem;
       margin-bottom: 0.5rem;
+      color: #ffffff;
       text-align: center;
     }
 
     .collab-desc {
       font-size: 1rem;
-      color: #555;
+      color: #f1f1f1;
       margin-bottom: 1.5rem;
       text-align: center;
     }
@@ -76,11 +109,10 @@
 </head>
 <body>
   <header>
+    <!-- Back Button -->
+    <a href="socials.html" class="back-button">← Back to Socials</a>
     <h1>Featured Collaborations</h1>
-    <p style="color:#666; max-width: 720px; margin: 0 auto;">
-      Scroll through our most recent collabs. Each one is a fully immersive,
-      flexible storytelling block powered by Firebase.
-    </p>
+    <p>Scroll through our most recent collabs. Each one is a fully immersive, flexible storytelling block powered by Firebase.</p>
   </header>
 
   <main id="collab-feed"></main>
