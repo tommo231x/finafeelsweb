@@ -1,90 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Socials – FinaFeels</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborations - FinaFeels</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="FinaFeels - Explore the AI World of Fina" />
+    <meta property="og:description" content="Step into the digital studio and social space of FinaFeels." />
+    <meta property="og:image" content="https://www.finafeels.com/assets/images/fina2.jpg" />
+    <meta property="og:url" content="https://www.finafeels.com" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Fina's Social World</h1>
-    <p>Connect with Fina and explore her latest collaborations and creative circle.</p>
-  </header>
+    <!-- Centralized Navigation -->
+    <div id="nav-placeholder"></div>
+    <script>
+      fetch("nav.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("nav-placeholder").innerHTML = data;
+        });
+    </script>
 
-  <main>
-    <!-- Latest Collaboration Section -->
-    <section class="collab-preview-card">
-      <h2>Latest Collaboration</h2>
-      <img id="latest-collab-image" src="placeholder.jpg" alt="Latest Collaboration" style="max-width:100%; border-radius:10px;" />
-      <br/>
-      <a href="features.html" class="button-link">View All Collaborations</a>
+    <!-- Hero Section -->
+    <section class="hero collabs-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Collaborations</h1>
+                <p>Fina's creative partnerships and projects</p>
+            </div>
+        </div>
     </section>
 
-    <!-- Stylists & Creative Circle (restored) -->
-    <section class="social-circle">
-      <h2>Creative Circle</h2>
-      <ul>
-        <li>Stylist: <a href="#">Person 1</a></li>
-        <li>Stylist: <a href="#">Person 2</a></li>
-        <li>Makeup Artist: <a href="#">Person 3</a></li>
-        <li>Photographer: <a href="#">Person 4</a></li>
-      </ul>
+    <!-- Collaborations Grid -->
+    <section class="collaborations-grid">
+        <div class="container">
+            <div class="collabs-grid">
+                <div class="collab-card">
+                    <div class="collab-image">
+                        <img src="assets/images/blog-thumbnail-1.jpg" alt="Fashion Forward Collaboration" />
+                    </div>
+                    <div class="collab-content">
+                        <h3>Fashion Forward: AI Trends 2024</h3>
+                        <p>A groundbreaking collaboration exploring the intersection of artificial intelligence and high fashion trends.</p>
+                        <div class="collab-meta">
+                            <span class="collab-type">Editorial</span>
+                            <span class="collab-date">2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collab-card">
+                    <div class="collab-image">
+                        <img src="assets/images/blog-thumbnail-1.jpg" alt="Style Revolution Collaboration" />
+                    </div>
+                    <div class="collab-content">
+                        <h3>Style Revolution</h3>
+                        <p>Partnering with emerging designers to showcase how AI can enhance creative vision in fashion.</p>
+                        <div class="collab-meta">
+                            <span class="collab-type">Partnership</span>
+                            <span class="collab-date">2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collab-card">
+                    <div class="collab-image">
+                        <img src="assets/images/blog-thumbnail-1.jpg" alt="Creative Vision Collaboration" />
+                    </div>
+                    <div class="collab-content">
+                        <h3>Creative Vision Series</h3>
+                        <p>A multi-part series featuring collaborations with photographers, stylists, and digital artists.</p>
+                        <div class="collab-meta">
+                            <span class="collab-type">Series</span>
+                            <span class="collab-date">2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collab-card">
+                    <div class="collab-image">
+                        <img src="assets/images/blog-thumbnail-1.jpg" alt="AI Artistry Collaboration" />
+                    </div>
+                    <div class="collab-content">
+                        <h3>AI Artistry Project</h3>
+                        <p>Exploring the boundaries between human creativity and artificial intelligence in fashion design.</p>
+                        <div class="collab-meta">
+                            <span class="collab-type">Project</span>
+                            <span class="collab-date">2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Social Links (restored) -->
-    <section class="social-links">
-      <h2>Connect with Fina</h2>
-      <ul>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">TikTok</a></li>
-        <li><a href="#">Twitter</a></li>
-        <li><a href="#">LinkedIn</a></li>
-      </ul>
-    </section>
-  </main>
-
-  <!-- Firebase script to auto-update latest collaboration -->
-  <script type="module">
-    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
-    import { getFirestore, collection, query, orderBy, limit, getDocs } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
-    import { getStorage, ref, getDownloadURL } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js';
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyBNAiBbjBl7SpqwL0NiJmx3BVuRrd1FVBA",
-      authDomain: "finafeels-39852.firebaseapp.com",
-      projectId: "finafeels-39852",
-      storageBucket: "finafeels-39852.firebasestorage.app",
-      messagingSenderId: "962083690885",
-      appId: "1:962083690885:web:115469c62f982fa24fccec",
-      measurementId: "G-C60L4MRLYR"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-    const storage = getStorage(app);
-
-    async function updateLatestCollab() {
-      const collabRef = collection(db, 'FinaFeels_Collaboration_Feature');
-      const q = query(collabRef, orderBy('Date', 'desc'), limit(1));
-
-      const snapshot = await getDocs(q);
-      if (!snapshot.empty) {
-        const latestData = snapshot.docs[0].data();
-        if (latestData.Images && latestData.Images.length > 0) {
-          const imageURL = await getDownloadURL(ref(storage, latestData.Images[0]));
-          const latestImage = document.getElementById('latest-collab-image');
-          if (latestImage) {
-            latestImage.src = imageURL;
-            latestImage.alt = latestData.Title || "Latest Collaboration";
-          }
-        }
-      }
-    }
-
-    updateLatestCollab();
-  </script>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
