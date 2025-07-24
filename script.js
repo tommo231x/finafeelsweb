@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     window.finaFeelsLoaded = true;
 
+    // Add loading performance monitoring
+    const performanceStart = performance.now();
+
     // Console welcome message
     console.log('%c Welcome to FinaFeels! ', 'background: #4B206D; color: white; padding: 10px; border-radius: 5px; font-size: 16px;');
     console.log('%c Fashion. AI. Creativity. Solutions. ', 'color: #4B206D; font-size: 14px;');
@@ -287,6 +290,71 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     } // End of homepage-specific code
+
+    // Hero section tab functionality (for socials page)
+    const heroNavItems = document.querySelectorAll('.hero-nav-item');
+    const heroSections = document.querySelectorAll('.hero-section');
+
+    if (heroNavItems.length > 0 && heroSections.length > 0) {
+        heroNavItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const targetSection = this.getAttribute('data-section');
+                
+                // Remove active class from all nav items and sections
+                heroNavItems.forEach(nav => nav.classList.remove('active'));
+                heroSections.forEach(section => section.classList.remove('active'));
+                
+                // Add active class to clicked nav item and corresponding section
+                this.classList.add('active');
+                document.getElementById(targetSection + '-section').classList.add('active');
+                
+                // Trigger counter animation if stats section is selected
+                if (targetSection === 'stats') {
+                    animateCounters();
+                }
+            });
+        });
+    }
+
+    // Counter animation function
+    function animateCounters() {
+        const counters = document.querySelectorAll('.stat-value[data-count]');
+        counters.forEach(counter => {
+            const target = counter.getAttribute('data-count');
+            const duration = 2000; // 2 seconds
+            const increment = target === '∞' ? 1 : target / (duration / 16);
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                if (target === '∞') {
+                    counter.textContent = '∞';
+                    clearInterval(timer);
+                } else if (current >= target) {
+                    counter.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    current += increment;
+                    counter.textContent = Math.floor(current);
+                }
+            }, 16);
+        });
+    }
+
+    // Feature card interactions
+    const featureCards = document.querySelectorAll('.feature-card');
+    featureCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const feature = this.getAttribute('data-feature');
+            // Add subtle animation feedback
+            this.style.transform = 'translateY(-5px) scale(1.02)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 200);
+            
+            // You can add navigation logic here based on the feature
+            console.log('Feature clicked:', feature);
+        });
+    });
 
     // Universal code for all pages
     try {
