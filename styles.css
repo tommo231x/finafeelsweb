@@ -866,11 +866,11 @@ p {
   .homepage-split {
     flex-direction: column;
   }
-  
+
   .split-section {
     min-height: 50vh;
   }
-  
+
   .floating-fina,
   .floating-studio {
     position: relative;
@@ -881,11 +881,11 @@ p {
     background-color: rgba(75, 32, 109, 0.9);
     margin: 0;
   }
-  
+
   .floating-fina {
     order: 1;
   }
-  
+
   .floating-studio {
     order: 2;
   }
@@ -1035,7 +1035,8 @@ p {
 }
 
 .features-hero p {
-  color: var(--deep-purple);
+  color:```text
+ var(--deep-purple);
   opacity: 0.8;
   font-size: 1.3rem;
   max-width: 600px;
@@ -1361,37 +1362,37 @@ p {
   .features-hero {
     padding: 4rem 0 3rem;
   }
-  
+
   .current-feature {
     padding: 2.5rem 2rem;
   }
-  
+
   .feature-badge {
     left: 2rem;
   }
-  
+
   .feature-layout {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
+
   .feature-content h2 {
     font-size: 2rem;
   }
-  
+
   .gallery-main {
     height: 60px;
   }
-  
+
   .features-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .features-cta {
     padding: 3rem 2rem;
   }
-  
+
   .features-cta h2 {
     font-size: 2rem;
   }
@@ -1575,108 +1576,9 @@ p {
 
 
 
-/* Featured Collaboration Preview on Socials */
-.featured-collab-preview {
-  padding: var(--section-padding);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(233, 216, 197, 0.4) 100%);
-}
 
-.featured-collab-preview .section-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
 
-.featured-collab-preview h2 {
-  color: var(--deep-purple);
-  font-size: 2.2rem;
-  font-family: 'Playfair Display', serif;
-}
 
-.collab-highlight {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.collab-preview-card {
-  background-color: white;
-  border-radius: 25px;
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.collab-preview-card:hover {
-  transform: translateY(-5px);
-}
-
-.collab-preview-image {
-  height: 300px;
-  overflow: hidden;
-}
-
-.collab-preview-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.collab-preview-content {
-  padding: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.collab-preview-meta {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.preview-category, .preview-date {
-  background-color: var(--deep-purple);
-  color: white;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-.collab-preview-content h3 {
-  color: var(--deep-purple);
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  font-family: 'Playfair Display', serif;
-}
-
-.collab-preview-content p {
-  color: var(--deep-purple);
-  opacity: 0.8;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  font-size: 1rem;
-}
-
-/* Mobile Responsive for Preview */
-@media (max-width: 768px) {
-  .collab-preview-card {
-    grid-template-columns: 1fr;
-  }
-  
-  .collab-preview-image {
-    height: 200px;
-  }
-  
-  .collab-preview-content {
-    padding: 2rem;
-  }
-  
-  .collab-preview-content h3 {
-    font-size: 1.5rem;
-  }
-}
 
 .collab-content p {
   color: var(--deep-purple);
@@ -2001,7 +1903,7 @@ p {
   .no-print {
     display: none !important;
   }
-  
+
   .gallery-btn,
   .gallery-dots {
     display: none !important;
@@ -2013,53 +1915,53 @@ p {
   .collab-magazine-hero h1 {
     font-size: 2.5rem;
   }
-  
+
   .collab-magazine-hero p {
     font-size: 1.1rem;
   }
-  
+
   .collab-feature-block {
     margin: 2rem 0;
     padding: 2rem;
   }
-  
+
   .collab-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
   }
-  
+
   .collab-header h2 {
     font-size: 1.8rem;
   }
-  
+
   .gallery-slides {
     height: 250px;
   }
-  
+
   .gallery-btn {
     width: 40px;
     height: 40px;
     font-size: 1.2rem;
   }
-  
+
   .gallery-btn.prev {
     left: 10px;
   }
-  
+
   .gallery-btn.next {
     right: 10px;
   }
-  
+
   .video-container {
     padding: 1.5rem;
   }
-  
+
   .archive-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .archive-separator h2 {
     font-size: 2rem;
   }
@@ -2081,6 +1983,118 @@ p {
   color: var(--deep-purple);
   opacity: 0.7;
   line-height: 1.6;
+}
+
+.featured-collab {
+  max-width: 900px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.featured-collab .collab-card {
+  display: flex;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-collab .collab-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.featured-collab .collab-images {
+  display: flex;
+  min-width: 240px;
+}
+
+.featured-collab .collab-images img {
+  width: 120px;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.featured-collab .collab-card:hover .collab-images img {
+  transform: scale(1.05);
+}
+
+.featured-collab .collab-text {
+  flex: 1;
+  padding: 30px;
+  background: var(--warm-beige);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.featured-collab .collab-title {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--deep-purple);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.featured-collab .collab-description {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--deep-purple);
+  opacity: 0.8;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.collab-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.collab-card-link:hover {
+  text-decoration: none;
+}
+
+.collab-card-link:hover .collab-card {
+  transform: translateY(-8px);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.25);
+}6;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .featured-collab {
+    padding: 0 15px;
+  }
+  
+  .featured-collab .collab-card {
+    flex-direction: column;
+  }
+  
+  .featured-collab .collab-images {
+    min-width: auto;
+    justify-content: center;
+  }
+  
+  .featured-collab .collab-images img {
+    width: 50%;
+    height: 200px;
+  }
+  
+  .featured-collab .collab-text {
+    padding: 25px;
+    text-align: center;
+  }
+  
+  .featured-collab .collab-title {
+    font-size: 1.5rem;
+  }
 }
 
 /* Collaborations Grid */

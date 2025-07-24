@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collaborations - FinaFeels</title>
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png" />
-    
+
     <!-- Open Graph Meta Tags for Social Sharing -->
     <meta property="og:title" content="FinaFeels - Explore the AI World of Fina" />
     <meta property="og:description" content="Step into the digital studio and social space of FinaFeels." />
     <meta property="og:image" content="https://www.finafeels.com/assets/images/fina2.jpg" />
     <meta property="og:url" content="https://www.finafeels.com" />
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
@@ -39,6 +39,22 @@
             <div class="hero-content">
                 <h1>Collaborations</h1>
                 <p>Fina's creative partnerships and projects</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Collaboration Section -->
+    <section class="featured-collab">
+        <div id="featured-collab-container">
+            <div class="collab-card">
+                <div class="collab-images">
+                    <img src="https://placehold.co/120x300" alt="Loading..." />
+                    <img src="https://placehold.co/120x300" alt="Loading..." />
+                </div>
+                <div class="collab-text">
+                    <h2 class="collab-title">Loading Featured Collaboration...</h2>
+                    <p class="collab-description">Please wait while we load the latest collaboration details.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -107,5 +123,79 @@
     </section>
 
     <script src="script.js"></script>
+
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
+        import { getFirestore, collection, query, orderBy, limit, getDocs } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
+        import { getStorage, ref, getDownloadURL } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js';
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBNAiBbjBl7SpqwL0NiJmx3BVuRrd1FVBA",
+            authDomain: "finafeels-39852.firebaseapp.com",
+            projectId: "finafeels-39852",
+            storageBucket: "finafeels-39852.firebasestorage.app",
+            messagingSenderId: "962083690885",
+            appId: "1:962083690885:web:115469c62f982fa24fccec",
+            measurementId: "G-C60L4MRLYR"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const storage = getStorage(app);
+
+        
+
+        // Also update the featured collaboration card
+        async function updateFeaturedCollab() {
+            try {
+                const collabRef = collection(db, 'FinaFeels_Collaboration_Feature');
+                const q = query(collabRef, orderBy('Date', 'desc'), limit(1));
+                const snapshot = await getDocs(q);
+
+                if (!snapshot.empty) {
+                    const latestDoc = snapshot.docs[0];
+                    const latestData = latestDoc.data();
+                    const docId = latestDoc.id;
+                    const title = latestData.Title || "Featured Collaboration";
+                    const description = latestData.Description || "Discover our latest creative project.";
+
+                    let firstImageUrl = 'https://placehold.co/120x300';
+                    let secondImageUrl = 'https://placehold.co/120x300';
+
+                    if (latestData.Images && latestData.Images.length > 0) {
+                        try {
+                            firstImageUrl = await getDownloadURL(ref(storage, latestData.Images[0]));
+                            if (latestData.Images.length > 1) {
+                                secondImageUrl = await getDownloadURL(ref(storage, latestData.Images[1]));
+                            }
+                        } catch (error) {
+                            console.error('Error loading featured images:', error);
+                        }
+                    }
+
+                    const featuredContainer = document.getElementById('featured-collab-container');
+                    featuredContainer.innerHTML = `
+                        <a href="features.html#${docId}" class="collab-card-link">
+                            <div class="collab-card">
+                                <div class="collab-images">
+                                    <img src="${firstImageUrl}" alt="Featured Collaboration Image 1" />
+                                    <img src="${secondImageUrl}" alt="Featured Collaboration Image 2" />
+                                </div>
+                                <div class="collab-text">
+                                    <h2 class="collab-title">${title}</h2>
+                                    <p class="collab-description">${description}</p>
+                                </div>
+                            </div>
+                        </a>
+                    `;
+                }
+            } catch (error) {
+                console.error('Error loading featured collaboration:', error);
+            }
+        }
+
+        // Load featured collaboration when the page loads
+        updateFeaturedCollab();
+    </script>
 </body>
 </html>
