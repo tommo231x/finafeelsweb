@@ -1,174 +1,156 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio - FinaFeels</title>
-    
-    <meta name="description" content="Explore FinaFeels Studio - where AI meets fashion creativity through cutting-edge design and innovation." />
-    <meta name="keywords" content="FinaFeels, AI studio, fashion design, creative services, AI art" />
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="FinaFeels Studio - AI Fashion Creativity" />
-    <meta property="og:description" content="Discover our AI-powered fashion studio services and creative solutions." />
-    <meta property="og:image" content="https://www.finafeels.com/assets/images/fina3.jpg" />
-    <meta property="og:url" content="https://www.finafeels.com/studio.html" />
-    
+    <title>The Studio | FinaFeels</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Courier+Prime&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
-    <!-- Centralized Navigation -->
-    <div id="nav-placeholder"></div>
-    <script>
-      fetch("nav.html")
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById("nav-placeholder").innerHTML = data;
-        });
-    </script>
+
+<body class="page-studio">
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-logo">FINAFEELS</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Gateway</a></li>
+            <li><a href="world.html">World</a></li>
+            <li><a href="studio.html" class="active">Studio</a></li>
+            <li><a href="hub.html">Hub</a></li>
+        </ul>
+        <div class="nav-cta">
+            <a href="contact.html" class="btn btn-sm btn-glow">Hire Studio</a>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="hero studio-hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>The Studio</h1>
-                <p>Where AI creativity meets fashion innovation</p>
-                <div class="hero-buttons">
-                    <a href="#services" class="btn btn-primary">Our Services</a>
-                    <a href="#portfolio" class="btn btn-outline">View Portfolio</a>
-                </div>
+    <header class="page-hero">
+        <div class="hero-overlay"></div>
+        <!-- Placeholder for Video Background -->
+        <div class="hero-bg-video" style="background: url('assets/images/fina4.jpg') center/cover;"></div>
+
+        <div class="hero-content">
+            <span class="hero-subtitle">Innovation Lab</span>
+            <h1 class="hero-title">The <span class="text-gradient">Studio</span></h1>
+            <p class="hero-desc">
+                Where creativity meets automation. Explore our suite of AI-powered tools,
+                workflows, and production services designed for the modern creator.
+            </p>
+            <div class="hero-actions">
+                <a href="#services" class="btn btn-primary">Our Services</a>
+                <a href="#easysplit" class="btn btn-outline">Featured Tool</a>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- Studio Services -->
-    <section class="studio-services" id="services">
+    <!-- EasySplit Spotlight -->
+    <section id="easysplit" class="section">
         <div class="container">
-            <div class="studio-header">
-                <h2>Our Services</h2>
-                <p>Cutting-edge AI solutions for fashion and creativity</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="assets/images/favicon.png" alt="AI Design" />
-                    </div>
-                    <h3>AI Fashion Design</h3>
-                    <p>Revolutionary AI-powered design solutions that push the boundaries of fashion creativity.</p>
-                    <div class="service-status">Active</div>
+            <div class="glass-card grid-2" style="align-items: center;">
+                <div class="spotlight-content">
+                    <span class="hero-subtitle">Featured Tool</span>
+                    <h2 class="display-3" style="margin-bottom: 20px;">Easy<span class="text-gradient">Split</span></h2>
+                    <p class="text-muted" style="margin-bottom: 30px;">
+                        The ultimate tool for splitting and managing your digital assets.
+                        Create menus, upload receipts, and split bills effortlessly with our AI-powered engine.
+                    </p>
+                    <ul class="feature-list" style="margin-bottom: 30px;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check text-gold"></i> Create & Upload Menus
+                        </li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check text-gold"></i> Split Bills Instantly
+                        </li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check text-gold"></i> Manage "My Splits"
+                            Dashboard</li>
+                    </ul>
+                    <a href="https://easysplit.link/" target="_blank" class="btn btn-glow">Launch App <i
+                            class="fas fa-external-link-alt"></i></a>
                 </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="assets/images/favicon.png" alt="Creative Solutions" />
-                    </div>
-                    <h3>Creative Solutions</h3>
-                    <p>Custom AI tools and workflows tailored to enhance your creative process and output.</p>
-                    <div class="service-status">Active</div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="assets/images/favicon.png" alt="Digital Innovation" />
-                    </div>
-                    <h3>Digital Innovation</h3>
-                    <p>Pioneering digital fashion experiences through advanced AI technology integration.</p>
-                    <div class="service-status">Coming Soon</div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="assets/images/favicon.png" alt="Consulting" />
-                    </div>
-                    <h3>AI Consulting</h3>
-                    <p>Strategic guidance for integrating AI into your fashion business and creative workflows.</p>
-                    <div class="service-status">Coming Soon</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Preview -->
-    <section class="portfolio-preview" id="portfolio">
-        <div class="container">
-            <h2>Featured Work</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <img src="assets/images/fina1.jpg" alt="AI Fashion Collection" />
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>AI Fashion Collection 2024</h3>
-                        <p>A groundbreaking collection created through AI-human collaboration, showcasing the future of fashion design.</p>
-                        <div class="portfolio-tools">
-                            <span>Midjourney</span>
-                            <span>Photoshop</span>
-                            <span>AI Design</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <img src="assets/images/fina2.jpg" alt="Digital Style Guide" />
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>Digital Style Guide</h3>
-                        <p>Comprehensive AI-generated style guides that revolutionize personal fashion consulting.</p>
-                        <div class="portfolio-tools">
-                            <span>Custom AI</span>
-                            <span>Style Analysis</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <img src="assets/images/fina3.jpg" alt="Virtual Styling" />
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>Virtual Styling Platform</h3>
-                        <p>An innovative platform combining AI intelligence with fashion expertise for personalized styling.</p>
-                        <div class="portfolio-tools">
-                            <span>Machine Learning</span>
-                            <span>Computer Vision</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <img src="assets/images/fina4.jpg" alt="Creative Campaign" />
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>Brand Creative Campaign</h3>
-                        <p>AI-enhanced creative campaigns that deliver unique visual narratives and brand storytelling.</p>
-                        <div class="portfolio-tools">
-                            <span>Creative AI</span>
-                            <span>Brand Strategy</span>
-                        </div>
+                <div class="spotlight-visual"
+                    style="position: relative; height: 400px; border-radius: 16px; overflow: hidden;">
+                    <img src="C:/Users/tommo/.gemini/antigravity/brain/3bf60202-5f75-4e75-847f-f4d2b1a62d9b/easysplit_homepage_1764882605196.png"
+                        alt="EasySplit Interface" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.8));">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="studio-cta">
+    <!-- Services Grid -->
+    <section id="services" class="section">
         <div class="container">
-            <h2>Ready to Create?</h2>
-            <p>Let's bring your vision to life with AI-powered creativity</p>
-            <a href="about.html" class="btn btn-primary">Get in Touch</a>
+            <div class="section-header">
+                <h2>Services & <span class="text-gradient">Workflows</span></h2>
+                <p class="text-muted">Empowering your creative process.</p>
+            </div>
+
+            <div class="grid-3">
+                <!-- Service 1 -->
+                <div class="glass-card service-card">
+                    <div class="service-icon"><i class="fas fa-robot"></i></div>
+                    <h3>AI Content Creation</h3>
+                    <p class="text-muted">Custom workflows to automate your content generation pipeline, from ideation
+                        to final render.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-card service-card">
+                    <div class="service-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>Workflow Automation</h3>
+                    <p class="text-muted">Optimize your business processes with smart automation tools that save you
+                        time and money.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-card service-card">
+                    <div class="service-icon"><i class="fas fa-magic"></i></div>
+                    <h3>Creative Consulting</h3>
+                    <p class="text-muted">Expert advice on integrating AI into your creative projects. Let's build the
+                        future together.</p>
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- Creative Portfolio (Masonry) -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Creative <span class="text-gradient">Output</span></h2>
+                <a href="#" class="btn btn-sm btn-outline">View All Projects</a>
+            </div>
+            <div class="masonry-grid">
+                <div class="masonry-item glass-card">
+                    <img src="assets/images/fina3.jpg" alt="Portfolio 1">
+                </div>
+                <div class="masonry-item glass-card">
+                    <img src="assets/images/fina1.jpg" alt="Portfolio 2">
+                </div>
+                <div class="masonry-item glass-card">
+                    <img src="assets/images/fina4.jpg" alt="Portfolio 3">
+                </div>
+                <div class="masonry-item glass-card">
+                    <img src="assets/images/fina2.jpg" alt="Portfolio 4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Firebase Compat SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+    <script src="firebase-init.js"></script>
 
     <script src="script.js"></script>
 </body>
+
 </html>

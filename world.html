@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinaFeels World | Creative Universe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Courier+Prime&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="page-world">
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-logo">FINAFEELS</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Gateway</a></li>
+            <li><a href="world.html" class="active">World</a></li>
+            <li><a href="studio.html">Studio</a></li>
+            <li><a href="hub.html">Hub</a></li>
+        </ul>
+        <div class="nav-cta">
+            <a href="contact.html" class="btn btn-sm btn-glow">Collaborate</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="page-hero">
+        <div class="hero-overlay"></div>
+        <!-- Placeholder for Video Background -->
+        <div class="hero-bg-video" style="background: url('assets/images/fina2.jpg') center/cover;"></div>
+
+        <div class="hero-content">
+            <span class="hero-subtitle">The Creative Universe</span>
+            <h1 class="hero-title">Fina's <span class="text-gradient">World</span></h1>
+            <p class="hero-desc">
+                Immerse yourself in a digital realm where fashion meets artificial intelligence.
+                Explore behind-the-scenes stories, latest social updates, and the art of the possible.
+            </p>
+            <div class="hero-actions">
+                <a href="#social-feed" class="btn btn-primary">Explore Feed</a>
+                <a href="featured-collabs.html" class="btn btn-outline">View Collabs</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Social Feed Section (Masonry) -->
+    <section id="social-feed" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="display-3">Social <span class="text-gradient">Pulse</span></h2>
+                <div class="social-filters">
+                    <button class="btn btn-sm btn-outline active">All</button>
+                    <button class="btn btn-sm btn-outline">Instagram</button>
+                    <button class="btn btn-sm btn-outline">TikTok</button>
+                </div>
+            </div>
+
+            <div class="masonry-grid">
+                <!-- Item 1 -->
+                <div class="masonry-item glass-card">
+                    <img src="assets/images/fina1.jpg" alt="Fashion AI">
+                    <div class="feed-content" style="padding-top: 20px;">
+                        <span class="text-gold"><i class="fab fa-instagram"></i> Instagram</span>
+                        <p class="text-muted" style="margin-top: 10px;">Exploring new AI fashion trends! 👗✨ #AIFashion
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="masonry-item glass-card">
+                    <img src="assets/images/fina4.jpg" alt="BTS">
+                    <div class="feed-content" style="padding-top: 20px;">
+                        <span class="text-gold"><i class="fab fa-tiktok"></i> TikTok</span>
+                        <p class="text-muted" style="margin-top: 10px;">Behind the scenes of my latest shoot 📸</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="masonry-item glass-card">
+                    <div class="feed-content">
+                        <span class="text-gold"><i class="fab fa-twitter"></i> X</span>
+                        <h3 style="margin: 15px 0;">New Collab Dropping Soon</h3>
+                        <p class="text-muted">Just dropped a new collaboration with @DigitalDreams! Check it out in the
+                            Studio. 🚀</p>
+                        <a href="#" class="text-gradient" style="display: inline-block; margin-top: 15px;">Read Thread
+                            &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="masonry-item glass-card">
+                    <img src="assets/images/fina3.jpg" alt="Portrait">
+                    <div class="feed-content" style="padding-top: 20px;">
+                        <span class="text-gold"><i class="fab fa-instagram"></i> Instagram</span>
+                        <p class="text-muted" style="margin-top: 10px;">Digital dreams becoming reality.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Preview -->
+    <section class="section">
+        <div class="container">
+            <div class="glass-card grid-2" style="align-items: center;">
+                <div class="content">
+                    <span class="hero-subtitle">Featured Story</span>
+                    <h2 class="display-3" style="margin-bottom: 20px;">Project <span class="text-gradient">Neon</span>
+                    </h2>
+                    <p class="text-muted" style="margin-bottom: 30px;">
+                        A cyberpunk fashion editorial exploring the intersection of street style and virtual reality
+                        textures.
+                        See how we used generative AI to create fabrics that don't exist in the real world.
+                    </p>
+                    <a href="featured-collabs.html" class="btn btn-glow">Read Full Story</a>
+                </div>
+                <div class="visual">
+                    <img src="assets/images/fina2.jpg" alt="Project Neon" style="border-radius: 16px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Firebase Compat SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+    <script src="firebase-init.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,4 +1,36 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+    // Carousel Logic for Split Homepage
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+
+    if (slides.length > 0) {
+        let currentSlide = 0;
+        const intervalTime = 5000;
+
+        const showSlide = (index) => {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            if (slides[index]) slides[index].classList.add('active');
+            if (dots[index]) dots[index].classList.add('active');
+        };
+
+        const nextSlide = () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        };
+
+        let slideInterval = setInterval(nextSlide, intervalTime);
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                currentSlide = index;
+                showSlide(currentSlide);
+                slideInterval = setInterval(nextSlide, intervalTime);
+            });
+        });
+    }
     // Prevent multiple script executions
     if (window.finaFeelsLoaded) {
         return;
@@ -13,9 +45,9 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('%c Fashion. AI. Creativity. Solutions. ', 'color: #4B206D; font-size: 14px;');
 
     // Only run homepage-specific code if we're on the homepage
-    const isHomepage = window.location.pathname === '/' || 
-                      window.location.pathname.endsWith('index.html') || 
-                      window.location.pathname === '/index.html';
+    const isHomepage = window.location.pathname === '/' ||
+        window.location.pathname.endsWith('index.html') ||
+        window.location.pathname === '/index.html';
 
     if (isHomepage) {
         // Declare carousel interval variable first
@@ -35,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         carouselImages.forEach((src, index) => {
             const img = new Image();
-            img.onload = function() {
+            img.onload = function () {
                 loadedImages++;
                 const slide = document.querySelector(`.carousel-slide:nth-child(${index + 1})`);
                 if (slide) {
@@ -140,11 +172,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 let touchStartX = 0;
                 let touchEndX = 0;
 
-                finaCarousel.addEventListener('touchstart', function(e) {
+                finaCarousel.addEventListener('touchstart', function (e) {
                     touchStartX = e.changedTouches[0].screenX;
                 });
 
-                finaCarousel.addEventListener('touchend', function(e) {
+                finaCarousel.addEventListener('touchend', function (e) {
                     touchEndX = e.changedTouches[0].screenX;
                     handleSwipe();
                 });
@@ -238,7 +270,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Sync video playback
                 if (isVideoPlaying) {
-                    nextVideo.play().catch(() => {});
+                    nextVideo.play().catch(() => { });
                 }
             }
 
@@ -262,25 +294,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 // On mobile, start videos immediately
                 isVideoPlaying = true;
                 videoElements.forEach(video => {
-                    video.play().catch(() => {});
+                    video.play().catch(() => { });
                 });
                 startVideoRotation();
 
                 // Add touch handler for mobile interaction
-                studioSection.addEventListener('touchstart', function() {
+                studioSection.addEventListener('touchstart', function () {
                     switchStudioVideo();
                 });
             } else {
                 // Desktop: hover handlers
-                studioSection.addEventListener('mouseenter', function() {
+                studioSection.addEventListener('mouseenter', function () {
                     isVideoPlaying = true;
                     videoElements.forEach(video => {
-                        video.play().catch(() => {});
+                        video.play().catch(() => { });
                     });
                     startVideoRotation();
                 });
 
-                studioSection.addEventListener('mouseleave', function() {
+                studioSection.addEventListener('mouseleave', function () {
                     isVideoPlaying = false;
                     videoElements.forEach(video => {
                         video.pause();
@@ -297,17 +329,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (heroNavItems.length > 0 && heroSections.length > 0) {
         heroNavItems.forEach(item => {
-            item.addEventListener('click', function() {
+            item.addEventListener('click', function () {
                 const targetSection = this.getAttribute('data-section');
-                
+
                 // Remove active class from all nav items and sections
                 heroNavItems.forEach(nav => nav.classList.remove('active'));
                 heroSections.forEach(section => section.classList.remove('active'));
-                
+
                 // Add active class to clicked nav item and corresponding section
                 this.classList.add('active');
                 document.getElementById(targetSection + '-section').classList.add('active');
-                
+
                 // Trigger counter animation if stats section is selected
                 if (targetSection === 'stats') {
                     animateCounters();
@@ -324,7 +356,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const duration = 2000; // 2 seconds
             const increment = target === '∞' ? 1 : target / (duration / 16);
             let current = 0;
-            
+
             const timer = setInterval(() => {
                 if (target === '∞') {
                     counter.textContent = '∞';
@@ -343,14 +375,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Feature card interactions
     const featureCards = document.querySelectorAll('.feature-card');
     featureCards.forEach(card => {
-        card.addEventListener('click', function() {
+        card.addEventListener('click', function () {
             const feature = this.getAttribute('data-feature');
             // Add subtle animation feedback
             this.style.transform = 'translateY(-5px) scale(1.02)';
             setTimeout(() => {
                 this.style.transform = '';
             }, 200);
-            
+
             // You can add navigation logic here based on the feature
             console.log('Feature clicked:', feature);
         });
@@ -364,7 +396,7 @@ document.addEventListener('DOMContentLoaded', function() {
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver(function (entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
@@ -373,7 +405,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }, observerOptions);
 
-        const animateElements = document.querySelectorAll('.service-card, .magazine-card, .about-text, .about-image');
+        const animateElements = document.querySelectorAll('.service-card, .magazine-card, .about-text, .about-image, .contact-container, .form-group');
         animateElements.forEach(el => {
             if (el) {
                 el.style.opacity = '0';
@@ -387,10 +419,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const serviceCards = document.querySelectorAll('.service-card');
         serviceCards.forEach(card => {
             if (card) {
-                card.addEventListener('mouseenter', function() {
+                card.addEventListener('mouseenter', function () {
                     this.style.transform = 'translateY(-10px) scale(1.02)';
                 });
-                card.addEventListener('mouseleave', function() {
+                card.addEventListener('mouseleave', function () {
                     this.style.transform = 'translateY(0) scale(1)';
                 });
             }
@@ -400,7 +432,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const magazineCards = document.querySelectorAll('.magazine-card');
         magazineCards.forEach(card => {
             if (card) {
-                card.addEventListener('click', function(e) {
+                card.addEventListener('click', function (e) {
                     e.preventDefault();
                     const overlay = this.querySelector('.construction-overlay');
                     if (overlay) {
@@ -436,7 +468,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const hero = document.querySelector('.hero');
         const heroImage = document.querySelector('.hero-image img');
         if (hero && heroImage) {
-            window.addEventListener('scroll', function() {
+            window.addEventListener('scroll', function () {
                 const scrolled = window.pageYOffset;
                 const rate = scrolled * -0.5;
                 if (scrolled < hero.offsetHeight) {
@@ -449,7 +481,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const buttons = document.querySelectorAll('.btn');
         buttons.forEach(button => {
             if (button) {
-                button.addEventListener('click', function(e) {
+                button.addEventListener('click', function (e) {
                     const ripple = document.createElement('span');
                     const rect = this.getBoundingClientRect();
                     const size = Math.max(rect.width, rect.height);
@@ -511,6 +543,26 @@ document.addEventListener('DOMContentLoaded', function() {
             node.addEventListener('animationend', handleAnimationEnd);
         }
     }
+    // Contact Page Toggle
+    const contactToggle = document.querySelector('.contact-toggle');
+    if (contactToggle) {
+        const buttons = contactToggle.querySelectorAll('.btn');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                buttons.forEach(b => {
+                    b.classList.remove('active');
+                    b.classList.add('inactive');
+                });
+                this.classList.remove('inactive');
+                this.classList.add('active');
+
+                // Optional: Toggle form fields based on selection
+                const type = this.textContent.trim();
+                console.log('Contact type switched to:', type);
+            });
+        });
+    }
 });
 
 // CSS for animations (only add if not already added)
@@ -541,7 +593,7 @@ if (!document.querySelector('#fina-animations')) {
 
 // === Firebase Auth: Email Link Sign-In ===
 // Wait for Firebase to be available
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Check if Firebase is loaded
     if (typeof firebase !== 'undefined') {
         const auth = firebase.auth();

@@ -1,115 +1,402 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinaFeels | The Digital Atelier</title>
 
-  <!-- Primary Meta Tags -->
-  <title>FinaFeels – Enter the World of AI Imagination</title>
-  <meta name="title" content="FinaFeels – Enter the World of AI Imagination" />
-  <meta name="description" content="Explore Fina's world of AI art, social collabs, and creative studio projects." />
-  <meta name="keywords" content="FinaFeels, AI influencer, AI model, digital creator, AI art, virtual studio, collaborations, Instagram AI" />
-  <meta name="author" content="FinaFeels" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.finafeels.com/" />
-  <meta property="og:title" content="FinaFeels – Enter the World of AI Imagination" />
-  <meta property="og:description" content="Explore Fina's world of AI art, social collabs, and creative studio projects." />
-  <meta property="og:image" content="https://www.finafeels.com/assets/images/fina1.jpg" />
+    <style>
+        :root {
+            --bg-color: #080808;
+            --text-main: #EAEAEA;
+            --text-dim: #666666;
+            --line-color: rgba(255, 255, 255, 0.15);
+            --accent-color: #ffffff;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Inter', sans-serif;
+            --font-mono: 'Space Grotesk', monospace;
+        }
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://www.finafeels.com/" />
-  <meta property="twitter:title" content="FinaFeels – Enter the World of AI Imagination" />
-  <meta property="twitter:description" content="Explore Fina's world of AI art, social collabs, and creative studio projects." />
-  <meta property="twitter:image" content="https://www.finafeels.com/assets/images/fina1.jpg" />
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    "name": "FinaFeels",
-    "description": "AI fashion muse and creative studio",
-    "creator": {
-      "@type": "Person",
-      "name": "Fina"
-    },
-    "url": "https://www.finafeels.com"
-  }
-  </script>
+        /* --- Noise Overlay for "Film" Feel --- */
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+            opacity: 0.05;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
 
-  <!-- Fonts and CSS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+        /* --- Grid Layout --- */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr 60px;
+            /* Sidebar, Main, Utilitarian Strip */
+            height: 100%;
+            width: 100%;
+            max-width: 1920px;
+            margin: 0 auto;
+            border-left: 1px solid var(--line-color);
+            border-right: 1px solid var(--line-color);
+        }
+
+        /* --- Col 1: The Manifest (Typography) --- */
+        .manifest-col {
+            border-right: 1px solid var(--line-color);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            background: var(--bg-color);
+        }
+
+        .brand {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .brand span {
+            color: var(--text-dim);
+        }
+
+        .content-group {
+            margin-bottom: 40px;
+        }
+
+        .group-label {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-item {
+            display: block;
+            font-family: var(--font-serif);
+            font-size: 24px;
+            font-style: italic;
+            color: var(--text-main);
+            margin-bottom: 12px;
+            text-decoration: none;
+            transition: transform 0.3s ease, color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-item:hover {
+            color: #fff;
+            transform: translateX(10px);
+        }
+
+        .nav-item sup {
+            font-family: var(--font-mono);
+            font-size: 9px;
+            font-style: normal;
+            color: var(--text-dim);
+            margin-left: 5px;
+        }
+
+        .sub-links {
+            margin-top: 15px;
+            padding-left: 5px;
+        }
+
+        .sub-link {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-dim);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .sub-link::before {
+            content: '+ ';
+            opacity: 0.5;
+        }
+
+        /* --- Col 2: The Visual (Video) --- */
+        .visual-col {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        video.hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            /* Moody dimming */
+            filter: grayscale(100%) contrast(1.1);
+            transition: filter 0.5s ease, opacity 0.5s ease;
+        }
+
+        .visual-col:hover video.hero-video {
+            filter: grayscale(0%) contrast(1);
+            opacity: 1;
+        }
+
+        .center-overlay {
+            position: absolute;
+            z-index: 10;
+            mix-blend-mode: difference;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .big-text {
+            font-family: var(--font-mono);
+            font-size: 12vw;
+            line-height: 0.8;
+            font-weight: 600;
+            color: #fff;
+            opacity: 0.1;
+            letter-spacing: -0.05em;
+        }
+
+        /* --- Col 3: Utility Strip (Right) --- */
+        .utility-col {
+            border-left: 1px solid var(--line-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px 0;
+            background: var(--bg-color);
+        }
+
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #00FF57;
+            /* System Green */
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 255, 87, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        /* --- Bottom Ticker --- */
+        .ticker-wrap {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+            background: var(--bg-color);
+            border-top: 1px solid var(--line-color);
+            overflow: hidden;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+        }
+
+        .ticker {
+            display: flex;
+            animation: ticker 30s linear infinite;
+            white-space: nowrap;
+        }
+
+        .ticker-item {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0 40px;
+        }
+
+        .ticker-item span {
+            color: var(--text-main);
+        }
+
+        @keyframes ticker {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1000px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto 1fr 40px;
+                border: none;
+            }
+
+            .manifest-col {
+                border-right: none;
+                border-bottom: 1px solid var(--line-color);
+                padding: 20px;
+            }
+
+            .utility-col {
+                display: none;
+            }
+
+            /* Hide strip on mobile */
+            .big-text {
+                font-size: 20vw;
+            }
+
+            /* Reorder for mobile: Brand -> Video -> Links */
+            .visual-col {
+                height: 40vh;
+                order: -1;
+                border-bottom: 1px solid var(--line-color);
+            }
+
+            .content-group {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="homepage-split">
-    <!-- Fina & Socials Side -->
-    <div class="split-section fina-section" id="fina-carousel">
-      <div class="carousel-container">
-        <div class="carousel-slide active"></div>
-        <div class="carousel-slide"></div>
-        <div class="carousel-slide"></div>
-        <div class="carousel-slide"></div>
-        <div class="carousel-slide"></div>
-      </div>
-      <div class="carousel-dots">
-        <span class="dot active" data-slide="0"></span>
-        <span class="dot" data-slide="1"></span>
-        <span class="dot" data-slide="2"></span>
-        <span class="dot" data-slide="3"></span>
-        <span class="dot" data-slide="4"></span>
-      </div>
+
+    <div class="noise-overlay"></div>
+
+    <div class="main-grid">
+
+        <!-- SIDEBAR: The Content -->
+        <div class="manifest-col">
+            <header>
+                <div class="brand">Fina<span>Feels</span></div>
+            </header>
+
+            <div class="menu-area">
+
+                <div class="content-group">
+                    <span class="group-label">01 // The System</span>
+                    <div class="nav-item">Collaborations <sup>03</sup></div>
+                    <div class="sub-links">
+                        <span class="sub-link">Social AI News</span>
+                        <span class="sub-link">Fashion Art</span>
+                        <span class="sub-link">Cultural Inputs</span>
+                    </div>
+                </div>
+
+                <div class="content-group">
+                    <span class="group-label">02 // The Studio</span>
+                    <div class="nav-item">Active Workflows <sup>BETA</sup></div>
+                    <div class="sub-links">
+                        <span class="sub-link">Apps by FinaFeels</span>
+                        <span class="sub-link">Co-Creation Tools</span>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <p style="font-family: var(--font-mono); font-size: 10px; color: var(--text-dim);">
+                    INDEX.HTML // V2.4.1<br>
+                    ALL SYSTEMS NOMINAL
+                </p>
+            </footer>
+        </div>
+
+        <!-- MAIN: The Visual (Video) -->
+        <div class="visual-col">
+            <video class="hero-video" autoplay loop muted playsinline poster="assets/images/fina3.jpg">
+                <source src="assets/videos/studio2.mp4" type="video/mp4">
+            </video>
+
+            <div class="center-overlay">
+                <div class="big-text">FINA</div>
+            </div>
+        </div>
+
+        <!-- RIGHT: Utility Strip -->
+        <div class="utility-col">
+            <div class="status-dot"></div>
+            <div class="vertical-text">Est. 2024 — Digital Atelier</div>
+            <div class="vertical-text">System Evolving</div>
+        </div>
+
     </div>
 
-    <!-- Studio Side -->
-    <div class="split-section studio-section">
-      <video class="studio-video" muted loop>
-        <source src="assets/videos/studio1.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="split-background"></div>
+    <!-- BOTTOM TICKER -->
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <div class="ticker-item">Site Status: <span>In Active Development</span></div>
+            <div class="ticker-item">The Studio: <span>Cooking New Tools</span></div>
+            <div class="ticker-item">Next Drop: <span>Coming Soon</span></div>
+            <div class="ticker-item">Version: <span>2.4 Alpha</span></div>
+            <!-- Repeat for infinite loop -->
+            <div class="ticker-item">Site Status: <span>In Active Development</span></div>
+            <div class="ticker-item">The Studio: <span>Cooking New Tools</span></div>
+            <div class="ticker-item">Next Drop: <span>Coming Soon</span></div>
+            <div class="ticker-item">Version: <span>2.4 Alpha</span></div>
+        </div>
     </div>
-  </div>
 
-  <div class="floating-content floating-fina">
-    <h2>Fina's World</h2>
-    <a href="socials.html" class="button">Enter</a>
-  </div>
-
-  <div class="floating-content floating-studio">
-    <h2>The Studio</h2>
-    <a href="studio.html" class="button">Enter</a>
-  </div>
-
-  <!-- Your JS -->
-  <script src="script.js"></script>
-
-  <!-- Firebase Analytics -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyBNAiBbjBl7SpqwL0NiJmx3BVuRrd1FVBA",
-      authDomain: "finafeels-39852.firebaseapp.com",
-      projectId: "finafeels-39852",
-      storageBucket: "finafeels-39852.firebasestorage.app",
-      messagingSenderId: "962083690885",
-      appId: "1:962083690885:web:115469c62f982fa24fccec",
-      measurementId: "G-C60L4MRLYR"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-  </script>
 </body>
+
 </html>

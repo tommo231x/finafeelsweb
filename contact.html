@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | FinaFeels</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Courier+Prime&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="page-contact">
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-logo">FINAFEELS</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Gateway</a></li>
+            <li><a href="world.html">World</a></li>
+            <li><a href="studio.html">Studio</a></li>
+            <li><a href="hub.html">Hub</a></li>
+        </ul>
+        <div class="nav-cta">
+            <a href="contact.html" class="btn btn-sm btn-glow active">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="page-hero">
+        <div class="hero-overlay"></div>
+        <video class="hero-bg-video" autoplay loop muted playsinline>
+            <source src="assets/videos/studio1.mp4" type="video/mp4">
+        </video>
+
+        <div class="hero-content">
+            <span class="hero-subtitle">Let's Create</span>
+            <h1 class="hero-title">Get in <span class="text-gradient">Touch</span></h1>
+            <p class="hero-desc">
+                Whether you're looking to collaborate on an AI fashion project or hire the studio for your brand,
+                we're ready to bring your vision to life.
+            </p>
+        </div>
+    </header>
+
+    <!-- Contact Form Section -->
+    <section class="section">
+        <div class="container">
+            <div class="glass-card contact-container">
+
+                <!-- Toggle Switch -->
+                <div class="contact-toggle-wrapper">
+                    <div class="contact-toggle">
+                        <button class="btn btn-sm active">Collaboration</button>
+                        <button class="btn btn-sm inactive">Service Inquiry</button>
+                    </div>
+                </div>
+
+                <form>
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-input" placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-input" placeholder="your@email.com">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Project Type</label>
+                        <select class="form-select">
+                            <option>Fashion Editorial</option>
+                            <option>Brand Campaign</option>
+                            <option>AI Consultation</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-textarea" rows="5" placeholder="Tell us about your project..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-glow" style="width: 100%;">Send Message</button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Firebase Compat SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+    <script src="firebase-init.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

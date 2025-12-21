@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hub | FinaFeels</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Courier+Prime&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="page-hub">
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-logo">FINAFEELS</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Gateway</a></li>
+            <li><a href="world.html">World</a></li>
+            <li><a href="studio.html">Studio</a></li>
+            <li><a href="hub.html" class="active">Hub</a></li>
+        </ul>
+        <div class="nav-cta">
+            <a href="#" class="btn btn-sm btn-outline">Log In</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="page-hero">
+        <div class="hero-overlay"></div>
+        <!-- Placeholder for Video Background -->
+        <div class="hero-bg-video" style="background: url('assets/images/fina1.jpg') center/cover;"></div>
+
+        <div class="hero-content">
+            <span class="hero-subtitle">Central Command</span>
+            <h1 class="hero-title">The <span class="text-gradient">Hub</span></h1>
+            <p class="hero-desc">
+                Your central dashboard for the FinaFeels ecosystem. Access tools,
+                browse the marketplace, and connect with the community.
+            </p>
+        </div>
+    </header>
+
+    <!-- Dashboard Layout -->
+    <section class="section">
+        <div class="container">
+            <div class="dashboard-grid">
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <h3 style="margin-bottom: 20px; font-size: 1.2rem;">Quick Links</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="#" class="active"><i class="fas fa-th-large"></i> Marketplace</a></li>
+                        <li><a href="#"><i class="fas fa-book-open"></i> Resources</a></li>
+                        <li><a href="#"><i class="fas fa-users"></i> Community</a></li>
+                        <li><a href="#"><i class="fas fa-lock"></i> Client Portal</a></li>
+                    </ul>
+
+                    <div
+                        style="margin-top: 40px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 12px;">
+                        <h4 style="font-size: 0.9rem; margin-bottom: 10px;">Status</h4>
+                        <div
+                            style="display: flex; align-items: center; gap: 10px; font-size: 0.8rem; color: var(--text-muted);">
+                            <span style="width: 8px; height: 8px; background: #00ff00; border-radius: 50%;"></span>
+                            All Systems Operational
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Main Content Area -->
+                <main class="dashboard-content">
+                    <!-- Marketplace Section -->
+                    <div class="section-header" style="margin-bottom: 30px;">
+                        <h2>Service <span class="text-gradient">Marketplace</span></h2>
+                    </div>
+
+                    <div class="grid-2">
+                        <!-- EasySplit Card -->
+                        <div class="glass-card" style="position: relative;">
+                            <div
+                                style="position: absolute; top: 20px; right: 20px; background: var(--gold-accent); color: #000; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 700;">
+                                POPULAR</div>
+                            <div class="service-icon"><i class="fas fa-receipt"></i></div>
+                            <h3>EasySplit</h3>
+                            <p class="text-muted" style="margin-bottom: 20px;">Easy bill splitting for groups and
+                                events.</p>
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
+                                <span class="text-gold" style="font-size: 1.2rem; font-weight: 700;">Free</span>
+                                <a href="https://easysplit.link/" target="_blank"
+                                    class="btn btn-sm btn-primary">Launch</a>
+                            </div>
+                        </div>
+
+                        <!-- Consultation Card -->
+                        <div class="glass-card">
+                            <div class="service-icon"><i class="fas fa-user-clock"></i></div>
+                            <h3>AI Consultation</h3>
+                            <p class="text-muted" style="margin-bottom: 20px;">One-on-one strategy session for your AI
+                                needs.</p>
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
+                                <span class="text-gold" style="font-size: 1.2rem; font-weight: 700;">$150/hr</span>
+                                <a href="#" class="btn btn-sm btn-outline">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resources Section -->
+                    <div class="section-header" style="margin: 60px 0 30px;">
+                        <h2>Latest <span class="text-gradient">Resources</span></h2>
+                    </div>
+
+                    <div class="glass-card" style="padding: 0;">
+                        <a href="#"
+                            style="display: flex; align-items: center; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <div
+                                style="width: 50px; height: 50px; background: rgba(255,255,255,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 20px;">
+                                <i class="fas fa-file-alt text-gradient"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <h4 style="margin-bottom: 5px;">Getting Started with AI Art</h4>
+                                <p class="text-muted" style="font-size: 0.9rem;">A comprehensive guide for beginners.
+                                </p>
+                            </div>
+                            <i class="fas fa-chevron-right text-muted"></i>
+                        </a>
+                        <a href="#" style="display: flex; align-items: center; padding: 20px;">
+                            <div
+                                style="width: 50px; height: 50px; background: rgba(255,255,255,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 20px;">
+                                <i class="fas fa-video text-gradient"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <h4 style="margin-bottom: 5px;">Building Slack Bots 101</h4>
+                                <p class="text-muted" style="font-size: 0.9rem;">Video tutorial series.</p>
+                            </div>
+                            <i class="fas fa-chevron-right text-muted"></i>
+                        </a>
+                    </div>
+
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Firebase Compat SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+    <script src="firebase-init.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
